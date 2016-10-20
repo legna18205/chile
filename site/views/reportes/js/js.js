@@ -133,6 +133,7 @@ $(document).ready(function(){
 			
 			html+='<div class="cont_btn">';
 			html+='<button  class="btn btn-success" disabled="" id="generar_orden" type="button" >generar</button>';
+			html+='<button  class="btn btn-success" id="generar_orden_all" type="button" >listar todas</button>';
 			
 			html+='<div>';
 					
@@ -143,6 +144,11 @@ $(document).ready(function(){
 				$(document).on("click","#generar_orden",function(){
 
 				location.href=base_url+"pdf/completar_orden/"+$("#id_orden").val();
+			})
+
+				$(document).on("click","#generar_orden_all",function(){
+
+				location.href=base_url+"pdf/completar_orden/";
 			})
 
 

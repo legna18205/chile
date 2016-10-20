@@ -304,6 +304,19 @@ class orden_de_pagoModel
              
            
         }
+
+
+          public function all(){
+
+            $sql = "SELECT * FROM orden_pago ";             
+            $datos=$this->_db->query($sql);
+            
+            return $datos->fetchall();
+             
+           
+        }
+
+
          static function pagos_para_facturas($id){
 
               $sql = "SELECT sum(pago.cantidad) as pagado FROM orden_pago,pago where orden_pago.id_orden_de_pago=pago.id_orden_de_pago and orden_pago.id_factura='$id'";  

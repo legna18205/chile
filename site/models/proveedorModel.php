@@ -121,6 +121,7 @@ class proveedorModel
 
                 $this->cargar($datoss);
                 $this->_id=$id;
+              
 
                 return $datoss;
 

@@ -191,7 +191,7 @@ class factura
         $this->cargar($datoss);
         $this->_id=$datoss['id_factura'];
         $this->_estatus=$datoss['estatus'];
-        $this->_id_proveeodor=$datoss['id_proveedor'];
+        $this->_id_proveedor=$datoss['id_proveedor'];
 
         $retencion= new retencion;   
 
