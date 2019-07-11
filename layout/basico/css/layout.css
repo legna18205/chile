@@ -1,0 +1,42 @@
+
+body {
+	/*background-image: url(../../../public/img/corretaje-de-propiedades.jpg);*/
+	min-height: 60vh;
+	background-size: 140%;    
+	/*background-position: center;
+		/*-moz-background-size: 140%; 
+	  	-o-background-size: 140%;  
+	 	-webkit-background-size: 140%; 
+	    -khtml-background-size: 140%; */ 
+	background-repeat: no-repeat;
+}
+.letras-pag{
+font-family: 'Lobster', cursive;
+}
+
+
+@media screen and (max-width: 600px) {
+ 
+/*.responsive-img{
+	
+	visibility: hidden;
+
+ 	}*/
+ 
+
+}
+
+
+
+html body#page-top div.navbar-fixed.black nav.black div.nav-wrapper.black ul.right.hide-on-med-and-down.black li a:hover {
+transition: 1s;
+background-color: #6373d7 !important;
+box-shadow: inset 0 6px 2em #0042ff;
+}
+
+html body#page-top div.navbar-fixed.black nav.black div.nav-wrapper.black ul.right.hide-on-med-and-down.black {
+
+
+    max-height: 100%;
+
+}

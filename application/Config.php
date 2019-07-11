@@ -9,12 +9,12 @@
  */
 
 
-define('BASE_URL', 'http://localhost/frame/');
-//define('BASE_URL', 'http://192.168.0.5/didactico/');
+//define('BASE_URL', 'http://localhost/frame/');
+define('BASE_URL', 'http://192.168.42.119/frame/');
 //define('BASE_URL', 'http://americas89.no-ip.info:8080/didactico/');
-define('DEFAULT_CONTROLLER', 'login');
-define('DEFAULT_LAYOUT', 'layout_legna');
-define('APP_NAME', 'XXXXX');
+define('DEFAULT_CONTROLLER', 'principal');
+define('DEFAULT_LAYOUT', 'basico');
+define('APP_NAME', 'pruba');
 define('APP_SLOGAN', 'default');
 define('APP_COMPANY', 'default');
 define('APP_TLF', '');
