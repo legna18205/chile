@@ -10,24 +10,22 @@
     <meta name="author" content="">
     <title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>
     <!--Core CSS -->
-    
-      <!--Import Google Icon Font-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
+      <!--Import Google Icon Font
       <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-       <!-- Compiled and minified CSS -->
+      Import materialize.css-->
+       <!-- Compiled and minified CSS
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-
-    
-    
+     -->
     <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.css" rel="stylesheet" type="text/css" /> 
     <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.structure.css" rel="stylesheet" type="text/css" /> 
     <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.theme.css" rel="stylesheet" type="text/css" />
     <!-- Custom CSS -->
     <link href="<?php echo $_layoutParams['ruta_css']; ?>layout.css" rel="stylesheet" type="text/css" />
-    
-    
+    <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $_layoutParams['ruta_css']; ?>style.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $_layoutParams['ruta_css']; ?>fonts.css" rel="stylesheet" type="text/css" />
     <!-- CSS view.. -->
     <?php if(isset($_layoutParams['css']) && count($_layoutParams['css'])): ?>
         <?php for($i=0; $i < count($_layoutParams['css']); $i++): ?>
@@ -37,53 +35,70 @@
 </head>
 
 <body id="page-top">
-    <div class="navbar-fixed black">
-    <nav class="black">
-    <div class="nav-wrapper black ">
-      <a href="#!" class="brand-logo contlogo"><img id="logo" class="responsive-img" src="<?php echo BASE_URL; ?>public/img/peque.gif"></a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger black"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down black">
-      <!-- menu para pc--> 
-        <li><a href="sass.html" class=" waves-effect ">propiedades</a></li>
-        <li><a href="badges.html" class="waves-effect">Contactanos</a></li>
-        <li><a href="collapsible.html" class="waves-effect">Mision y Vision</a></li>
-        <li><a href="mobile.html" class="waves-effect">Usuario<i class="material-icons right">person</i></a></li>
-      
-      </ul>
-    </div>
-  </nav>
-</div>
 
 
 
-  <!-- menu para telefonos -->
-  <ul class="sidenav" id="mobile-demo">
- <li><a href="sass.html">propiedades chupalo</a></li>
-        <li><a href="badges.html">Contactanos</a></li>
-        <li><a href="collapsible.html">Mision y Vision</a></li>
-        <li><a href="mobile.html">Usuario<i class="material-icons right">person</i></a></li>
-      
-  </ul>
+<div class="page">
 
-<div class="posnavar">
-    <div class="container">
-        <div class="row">
-            <div class="col m12">
-                <h2 class="center-align letras-pag">La forma mas facil de optener tu hogar...</h2>
-                 <nav>
-            <div class="nav-wrapper">
-              <form>
-                <div class="input-field z-depth-5 indigo darken-1">
-                  <input id="search" type="search" required>
-                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                  <i class="material-icons">close</i>
+         <!-- Page Header template de tico   
+        AIzaSyAuC3tFNMyjX1MM7lOfxN3F05IxytI8HMw
+        -->
+      <header class="section novi-background page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-lg-stick-up="true" data-lg-stick-up-offset="118px" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xl-stick-up="true" data-xl-stick-up-offset="118px" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-xxl-stick-up-offset="118px" data-xxl-stick-up="true">
+            <div class="rd-navbar-aside-outer">
+              <div class="rd-navbar-aside">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.html"><img src="images/logo-default-151x44.png" alt="" width="151" height="44" srcset="images/logo-default-151x44.png 2x"/></a>
                 </div>
-              </form>
+                <div class="rd-navbar-collapse">
+                  <button class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle="#rd-navbar-collapse-content-1"><span></span></button>
+                  <div class="rd-navbar-collapse-content" id="rd-navbar-collapse-content-1">
+                    <article class="unit align-items-center">
+                      <div class="unit-left"><span class="icon novi-icon icon-md icon-modern mdi mdi-phone"></span></div>
+                      <div class="unit-body">
+                        <ul class="list-0">
+                          <li><a class="link-default" href="tel:#">1-800-1234-567</a></li>
+                          <li><a class="link-default" href="tel:#">1-800-8763-765</a></li>
+                        </ul>
+                      </div>
+                    </article>
+                    <article class="unit align-items-center">
+                      <div class="unit-left"><span class="icon novi-icon icon-md icon-modern mdi mdi-map-marker"></span></div>
+                      <div class="unit-body"><a class="link-default" href="tel:#">2130 Fulton Street <br> San Diego, CA 94117-1080</a></div>
+                    </article><a class="button button-gray-bordered button-winona" href="#">Request a call</a>
+                  </div>
+                </div>
+              </div>
             </div>
-            </nav>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                  <!-- RD Navbar Nav-->
+                  <ul class="rd-navbar-nav">
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
+          </nav>
         </div>
-    </div>
-</div>
+      </header>
 
-        
+</div>
+ <!-- Page Header fin template de tico   
+AIzaSyAuC3tFNMyjX1MM7lOfxN3F05IxytI8HMw
+-->
+
+

@@ -10,6 +10,8 @@
 
 <script src="<?php echo BASE_URL; ?>public/js/jquery-ui.js" type="text/javascript"></script>
 <script src="<?php echo $_layoutParams['ruta_js']; ?>materialize_custom.js" type="text/javascript"></script>
+<script src="<?php echo $_layoutParams['ruta_js']; ?>core.min.js" type="text/javascript"></script>
+<script src="<?php echo $_layoutParams['ruta_js']; ?>script.js" type="text/javascript"></script>
 
 
 
