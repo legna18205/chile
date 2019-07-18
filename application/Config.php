@@ -10,7 +10,7 @@
 
 
 //define('BASE_URL', 'http://localhost/frame/');
-define('BASE_URL', 'http://192.168.0.15/chile/');
+define('BASE_URL', 'http://localhost/chile/');
 //define('BASE_URL', 'http://americas89.no-ip.info:8080/didactico/');
 define('DEFAULT_CONTROLLER', 'principal');
 define('DEFAULT_LAYOUT', 'basico');

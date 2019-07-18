@@ -5,16 +5,19 @@
     <meta content="text/html">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL?>public/img/glipicon.jpg" />
     <title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>
     <!--Core CSS -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
       <!--Import Google Icon Font
-      <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+      --> 
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      Import materialize.css-->
+      <!--Import materialize.css-->
        <!-- Compiled and minified CSS
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      -->
@@ -36,7 +39,15 @@
 
 <body id="page-top">
 
-
+   <div class="preloader">
+      <div class="preloader-logo"><img src="<?php echo BASE_URL?>public/img/peque.jpg" alt="" width="151" height="44" srcset="images/logo-default-151x44.png 2x"/>
+      </div>
+      <div class="preloader-body">
+        <div id="loadingProgressG">
+          <div class="loadingProgressG" id="loadingProgressG_1"></div>
+        </div>
+      </div>
+    </div>
 
 <div class="page">
 
@@ -53,13 +64,13 @@
                 <div class="rd-navbar-panel">
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.html"><img src="images/logo-default-151x44.png" alt="" width="151" height="44" srcset="images/logo-default-151x44.png 2x"/></a>
+                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.html"><img src="<?php echo BASE_URL?>public/img/peque.jpg" alt="" width="151" height="44"/></a>
                 </div>
                 <div class="rd-navbar-collapse">
                   <button class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle="#rd-navbar-collapse-content-1"><span></span></button>
                   <div class="rd-navbar-collapse-content" id="rd-navbar-collapse-content-1">
                     <article class="unit align-items-center">
-                      <div class="unit-left"><span class="icon novi-icon icon-md icon-modern mdi mdi-phone"></span></div>
+                      <div class="unit-left"><i class="material-icons">local_phone</i></div>
                       <div class="unit-body">
                         <ul class="list-0">
                           <li><a class="link-default" href="tel:#">1-800-1234-567</a></li>
@@ -68,7 +79,7 @@
                       </div>
                     </article>
                     <article class="unit align-items-center">
-                      <div class="unit-left"><span class="icon novi-icon icon-md icon-modern mdi mdi-map-marker"></span></div>
+                      <div class="unit-left"><i class="material-icons">location_on</i></div>
                       <div class="unit-body"><a class="link-default" href="tel:#">2130 Fulton Street <br> San Diego, CA 94117-1080</a></div>
                     </article><a class="button button-gray-bordered button-winona" href="#">Request a call</a>
                   </div>
@@ -96,7 +107,7 @@
         </div>
       </header>
 
-</div>
+
  <!-- Page Header fin template de tico   
 AIzaSyAuC3tFNMyjX1MM7lOfxN3F05IxytI8HMw
 -->

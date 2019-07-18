@@ -1,8 +1,10 @@
 
 
-
+</div>
             
  <!-- Publicos -->
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+
 <script src="<?php echo BASE_URL; ?>public/js/jquery.js" type="text/javascript"></script>
 
 <script src="<?php echo BASE_URL; ?>public/js/config.js" type="text/javascript"></script>
@@ -12,8 +14,7 @@
 <script src="<?php echo $_layoutParams['ruta_js']; ?>materialize_custom.js" type="text/javascript"></script>
 <script src="<?php echo $_layoutParams['ruta_js']; ?>core.min.js" type="text/javascript"></script>
 <script src="<?php echo $_layoutParams['ruta_js']; ?>script.js" type="text/javascript"></script>
-
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 
 
   <!-- Compiled and minified JavaScript -->

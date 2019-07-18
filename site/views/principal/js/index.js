@@ -1,83 +1,53 @@
 $(document).ready(function(){
 
+// 1 adaptacion de estilo a dispocitivos moviles
+  var useragent = navigator.userAgent;
+  var mapdiv = document.getElementById("map");
 
+  if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
+    mapdiv.style.width = '100%';
+    mapdiv.style.height = '100%';
+  } else {
+    mapdiv.style.width = '100%';
+    mapdiv.style.height = '600px';
+  }
+//1 fin
 
-	if ($('#_ROL_').val()=='3' || $('#_ROL_').val()=='5') {
+//2 funcion de inicializacion de la geolocalizacion
+function localizacion(posicion){
+	console.log(posicion);
+	var imagen= base_url+"public/img/mark.png";// imagen del marcador personalizado	
+	var latitude= posicion.coords.latitude;//latitup	
+	var longitude= posicion.coords.longitude;//longitud	
+	//console.log("latutud"+latitude+"/br"+"longitude:"+longitude);
+	var coord ={lat:latitude ,lng: longitude};
+	//var coord ={lat:10.4311864 ,lng: -64.1543756};
+	var map = new google.maps.Map(document.getElementById('map'),{
+		zoom: 15,
+		center: coord,
+		mapTypeId: google.maps.MapTypeId.ROADMAP, //el valor true desactiva la interfaz, el valor false (por defecto) la activa disableDefaultUI: true
+		disableDefaultUI: true
+	});
+	var marker2 = new google.maps.Marker({//marcador del usuario
+		position: coord,
+		map: map,
 
-$(".col-xs-10 > article:nth-child(3) > div:nth-child(2) > div:nth-child(1)").remove();
+	});
+	var marker = new google.maps.Marker({// marcador de propiedades
+		position: {lat:10.4311864 ,lng: -64.1543756},
+		map: map,
+		icon:imagen
 
-
+	});
 }
-if ($('#_ROL_').val()=='5') {
+//2 fin
+	function error(){
+		console.log('nada papa');
+	}
 
-$(".col-xs-10 > article:nth-child(2) > div:nth-child(2) > div:nth-child(1)").remove();
-$("#menu_gestion > center:nth-child(1) > div:nth-child(1)").remove();
+	//localizacion()
 
-
-
-
-}
-
-
-
-//contlos de proveedor y bancos------------------------------------
-$(document).on("click","#opt_",function(){
-
-
-var controler=this.dataset.controller;
-var accion=this.dataset.accion;
-
-document.location=base_url+controler+"?accion="+accion;
-
-
-});
-
-//------------------------------------------------------------------
-
-
-
-
-
-
-
-$(document).on("click","#x_gestion",function(){
-
-
-var controler=this.dataset.controller;
-
-
-document.location=base_url+controler;
-
-
-});
-
-//------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	navigator.geolocation.getCurrentPosition(localizacion,error);
 
 
 
