@@ -1,0 +1,199 @@
+/* Para 960px */  
+@media only screen and (min-width: 981px) {  
+.logoo {
+	visibility: hidden;
+}
+.rd-navbar-aside-outer{
+	display:none;
+
+}
+
+}  
+/* Para 960px */  
+@media only screen and (max-width: 980px) and (min-width: 821px) {  
+.logoo {
+	width: 49%;
+	height: auto;
+}
+.logo-navegacion-peq {
+	width: 43%;
+	margin-left: 29%;
+}
+.boton-navegacion {
+	padding: 4px 25px;
+}
+}  
+  
+/* Para 800px ------------------------------------------------------------------------------------*/  
+@media only screen and (max-width: 820px) and (min-width: 621px) {  
+.logoo {
+	width: 75%;
+	height: 52px;
+}
+.logo-navegacion-peq {
+	width: 62%;
+	padding-left: 24%;
+}
+.boton-navegacion {
+	padding: 4px 25px;
+}
+}  
+  
+/* Para 600px ------------------------------------------------------------------------------------*/  
+@media only screen and (max-width: 620px) and (min-width: 501px) {  
+.logoo {
+	width: 70%;
+	height: auto;
+}
+.logo-navegacion-peq {
+	width: 49%;
+	/* padding-left: 18%; */
+	margin-left: 18%;
+}
+.boton-navegacion {
+	padding: 4px 25px;
+}
+.post-modern-meta + p {
+	color: #151515;
+	font-size: 33px;
+	text-align: justify;
+}
+}  
+/* Para 480px ------------------------------------------------------------------------------------*/  
+@media only screen and (max-width: 500px) and (min-width: 441px) {  
+.logoo {
+	width: 75%;
+	height: auto;
+}
+.logo-navegacion-peq {
+	width: 49%;
+	margin-left: 14%;
+	padding-top: 3px;
+}
+.boton-navegacion {
+	padding: 4px 25px;
+}
+.post-modern-meta + p {
+	color: #151515;
+	font-size: 30px;
+	text-align: justify;
+}
+
+}   
+/* Para 440px ------------------------------------------------------------------------------------*/  
+@media only screen and (max-width: 440px) and (min-width: 341px) {  
+.logoo {
+	width: 75%;
+	height: auto;
+}
+.logo-navegacion-peq {
+	width: 61%;
+	margin-left: 5%;
+	padding-top: 5px;
+}
+.boton-navegacion {
+	padding: 4px 25px;
+}
+.post-modern-meta + p {
+	color: #151515;
+	font-size: 25px;
+	text-align: justify;
+}
+}  
+  
+/* Para 320px ------------------------------------------------------------------------------------*/  
+@media only screen and (max-width: 340px) and (min-width: 5px)  {  
+  .logoo{
+
+	width: 100%;
+	height: auto;
+
+}
+.logo-navegacion-peq {
+	width: 44%;
+	padding-left: 0%;
+	padding-top: 10px;
+}
+.boton-navegacion {
+	padding: 4px 25px;
+}
+.post-modern-meta + p {
+	color: #151515;
+	font-size: 30px;
+}
+} 
+
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	 font-size: 13px !important; 
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-moz-font-feature-settings: 'liga';
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html.rd-navbar-fixed-linked .page {
+	height: 5000px;
+}
+.tituloo {
+	height: 60px;
+}
+.tituloo::after {
+	content: "";
+	border: 2px solid #ef114c;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	width: 12px;
+	height: 12px;
+	z-index: 1;
+	margin-left: -6px;
+	background-color: transparent;
+}
+
+
+
+.material-icons-1 {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 30px !important;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-moz-font-feature-settings: 'liga';
+	-moz-osx-font-smoothing: grayscale;
+}
+.descrip {
+	padding-top: 0px;
+	margin-top: 0px;
+	font-size: 20px;
+	text-align: center;
+	color: #233354;
+}
+.desc:hover {
+	font-size: 20px;
+	text-align: center;
+	color: #db192d;
+}

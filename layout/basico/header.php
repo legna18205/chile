@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="wide wow-animation" lang="en">
 
 <head>
     <meta content="text/html">
@@ -9,37 +9,41 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL?>public/img/glipicon.jpg" />
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL?>public/img/glipicon.jpg" /> -->
+   
     <title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>
     <!--Core CSS -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
       <!--Import Google Icon Font
       <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
       --> 
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
       <!--Import materialize.css-->
        <!-- Compiled and minified CSS
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      -->
-    <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.css" rel="stylesheet" type="text/css" /> 
+<!--     <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.css" rel="stylesheet" type="text/css" /> 
     <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.structure.css" rel="stylesheet" type="text/css" /> 
-    <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.theme.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.theme.css" rel="stylesheet" type="text/css" /> -->
     <!-- Custom CSS -->
     <link href="<?php echo $_layoutParams['ruta_css']; ?>layout.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo $_layoutParams['ruta_css']; ?>style.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo $_layoutParams['ruta_css']; ?>fonts.css" rel="stylesheet" type="text/css" />
-    <!-- CSS view.. -->
+    <link href="<?php echo $_layoutParams['ruta_css']; ?>style.css" rel="stylesheet" type="text/css" id="main-styles-link" />
+    <link href="<?php echo $_layoutParams['ruta_css']; ?>font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $_layoutParams['ruta_css']; ?>nav.css" rel="stylesheet" type="text/css" />
+    <!-- CSS de la vista, se cargan de manera dinamica los archivos css que tenga la vista definida en su carpeta css y es llamado en el contralador de cada vista..  -->
     <?php if(isset($_layoutParams['css']) && count($_layoutParams['css'])): ?>
         <?php for($i=0; $i < count($_layoutParams['css']); $i++): ?>
             <link href="<?php echo $_layoutParams['css'][$i] ?>" rel="stylesheet" type="text/css" />
         <?php endfor; ?>
-    <?php endif; ?> 
+    <?php endif; ?>
 </head>
 
 <body id="page-top">
 
-   <div class="preloader">
+<!--    <div class="preloader">
       <div class="preloader-logo"><img src="<?php echo BASE_URL?>public/img/peque.jpg" alt="" width="151" height="44" srcset="images/logo-default-151x44.png 2x"/>
       </div>
       <div class="preloader-body">
@@ -47,7 +51,7 @@
           <div class="loadingProgressG" id="loadingProgressG_1"></div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 <div class="page">
 
@@ -58,34 +62,17 @@
         <!-- RD Navbar-->
         <div class="rd-navbar-wrap">
           <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-lg-stick-up="true" data-lg-stick-up-offset="118px" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xl-stick-up="true" data-xl-stick-up-offset="118px" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-xxl-stick-up-offset="118px" data-xxl-stick-up="true">
-            <div class="rd-navbar-aside-outer">
-              <div class="rd-navbar-aside">
-                <!-- RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!-- RD Navbar Toggle-->
+          <div class="rd-navbar-aside-outer">
+            <div class="row">
+              <div class="boton-navegacion">
+                  <!-- RD Navbar Toggle -->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.html"><img src="<?php echo BASE_URL?>public/img/peque.jpg" alt="" width="151" height="44"/></a>
-                </div>
-                <div class="rd-navbar-collapse">
-                  <button class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle="#rd-navbar-collapse-content-1"><span></span></button>
-                  <div class="rd-navbar-collapse-content" id="rd-navbar-collapse-content-1">
-                    <article class="unit align-items-center">
-                      <div class="unit-left"><i class="material-icons">local_phone</i></div>
-                      <div class="unit-body">
-                        <ul class="list-0">
-                          <li><a class="link-default" href="tel:#">1-800-1234-567</a></li>
-                          <li><a class="link-default" href="tel:#">1-800-8763-765</a></li>
-                        </ul>
-                      </div>
-                    </article>
-                    <article class="unit align-items-center">
-                      <div class="unit-left"><i class="material-icons">location_on</i></div>
-                      <div class="unit-body"><a class="link-default" href="tel:#">2130 Fulton Street <br> San Diego, CA 94117-1080</a></div>
-                    </article><a class="button button-gray-bordered button-winona" href="#">Request a call</a>
-                  </div>
-                </div>
+              </div>
+               <div class="logo-navegacion-peq">
+                  <img class="logoo" src="<?php echo BASE_URL?>public/img/logo2.gif" alt="" width="" height=""/>
               </div>
             </div>
+          </div> 
             <div class="rd-navbar-main-outer">
               <div class="rd-navbar-main">
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">

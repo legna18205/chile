@@ -9,9 +9,8 @@
  */
 
 
-//define('BASE_URL', 'http://localhost/frame/');
-define('BASE_URL', 'http://localhost/chile/');
-//define('BASE_URL', 'http://americas89.no-ip.info:8080/didactico/');
+//define('BASE_URL', 'http://localhost/chile/');
+define('BASE_URL', 'http://192.168.0.13/chile/');
 define('DEFAULT_CONTROLLER', 'principal');
 define('DEFAULT_LAYOUT', 'basico');
 define('APP_NAME', 'pruba');

@@ -16,18 +16,7 @@ abstract class Controller
     
     public function __construct() {
         $this->_view = new View(new Request);
-        $rutaModelo = ROOT . 'site'.DS.'models' . DS .'_menuModel.php';
-        if(is_readable($rutaModelo)){
-            require_once $rutaModelo;
-            $this->_modelo = new _menuModel;
-         if (session::get('autenticado')){
-             $this->_view->menu=$this->_modelo->menu(session::get('id_usuario'));   
-         }else{
-            $this->_view->menu=$this->_modelo->menu(); 
-         }
-           
-        }
-        
+       
     }
     
     abstract public function index();
