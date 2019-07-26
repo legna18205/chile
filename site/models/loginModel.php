@@ -17,7 +17,47 @@ class loginModel extends Model
         
         return $datos->fetch();
     }
+    public function getUsuario_google($email)
+    {
+        $sql="select * from usuario " .
+                "where email = '$email' ";
+     $datos = $this->_db->query( $sql );
+        
+        return $datos->fetch();
+    }
+    public function registrarUsuario($foto,$email,$nombre)
+    {
 
+        
+        
+       
+
+         $sql="insert into usuario values ('','$foto','2', '$email','','','1','$nombre')";
+        $this->_db->query($sql);
+         
+        
+        
+            
+                
+    
+    }
+
+    public function actualizar_foto_google($foto,$email)
+    {
+
+        
+        
+       
+
+        $sql="update usuario set foto='$foto' where email='$email'";
+        $this->_db->query($sql);
+         
+        
+        
+            
+                
+    
+    }
 }
 
 ?>

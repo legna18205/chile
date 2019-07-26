@@ -197,3 +197,43 @@ html.rd-navbar-fixed-linked .page {
 	text-align: center;
 	color: #db192d;
 }
+.navbar-right {
+	float: right !important;
+	margin-right: -15px;
+}
+
+.boton-usuario-login {
+	float: right;
+	margin: 0px;
+	padding: 0px;
+}
+.boton-usuario-login-no-login{
+	float: right;
+	margin: 0px;
+	padding: 0px;
+}
+.btn-usuario {
+	background-color: transparent;
+	border: 0px;
+	font-family: "Montserrat", monospace;
+}
+.dropdown-menu {
+	background-color: #fff;
+	box-shadow: 1px 1px 5px 3px #233354;
+}
+.dropdown-item {
+	color: #233354;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+	color: #c8114d;
+	background-color: transparent;
+}
+#avatar-mini{
+
+	width: 25px;
+	height: 25px;
+	background-color: red;
+	float: left;
+	border-radius: 15px;
+	margin-right: 5px;
+}

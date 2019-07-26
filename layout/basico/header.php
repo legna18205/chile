@@ -8,7 +8,8 @@
    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta name="description" content="">
     <meta name="author" content="">
-    
+    <!-- etiqueta meta con el id de google para la utilizacion de el api de logueo-->
+    <meta name="google-signin-client_id" content="550716738087-s3vhb8tj13t9ikus03s60co75agbgjj4.apps.googleusercontent.com">
     <!-- <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL?>public/img/glipicon.jpg" /> -->
    
     <title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>
@@ -86,10 +87,32 @@
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
                     </li>
+                    <li class="rd-nav-item boton-usuario-login">
+                      <?php if (session::get('autenticado')): ?>                
+                      <div class="dropdown ">
+                        <button class="rd-nav-link dropdown-toggle btn-usuario" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <div id="avatar-mini" style="background-image: url(<?php echo session::get('foto'); ?>); background-size: contain;"></div>
+                          <?php echo session::get('email'); ?>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="<?php echo BASE_URL; ?>recuperar/cambiar">Cambiar Contraseña</a>
+                          <a class="dropdown-item" href="<?php echo BASE_URL; ?>login/cerrar">Cerrar Sesión</a>
+                        </div>
+                      </div>
+                      <?php else: ?>
+
+                        <li class="rd-nav-item boton-usuario-login-no-login"><a class="rd-nav-link" href=<?php BASE_URL ?>"login"><i class="fa fa-user" aria-hidden="true"></i> login</a>
+                        </li>
+
+
+
+                      <?php endif; ?>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
+
           </nav>
         </div>
       </header>

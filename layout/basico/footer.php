@@ -87,7 +87,8 @@
         </div>
       </footer>
 </div>
-            
+ <!--js del api de google para los logueos-->
+         
  <!-- Publicos -->
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 
@@ -103,6 +104,7 @@
 
 
 
+
   <!-- Compiled and minified JavaScript -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
 <!-- Plugin JavaScript -->
@@ -115,6 +117,10 @@
         <script src="<?php echo $_layoutParams['js'][$i] ?>" type="text/javascript"></script>
     <?php endfor; ?>
 <?php endif; ?>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://apis.google.com/js/api:client.js"></script>
+
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 </body>
 
