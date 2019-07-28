@@ -101,7 +101,11 @@
  -->
 <script src="<?php echo $_layoutParams['ruta_js']; ?>core.min.js"></script>
 <script src="<?php echo $_layoutParams['ruta_js']; ?>script.js" type="text/javascript"></script>
-
+<script src="<?php echo BASE_URL; ?>public/lightslider/js/lightslider.js"></script>
+<script src="<?php echo BASE_URL; ?>public/lightGallery/src/js/lightgallery.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/lightGallery/lib/jquery.mousewheel.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/lightGallery/modules/lg-fullscreen.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/lightGallery/modules/lg-thumbnail.min.js"></script>
 
 
 

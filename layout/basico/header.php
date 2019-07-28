@@ -26,8 +26,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      -->
 <!--     <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.css" rel="stylesheet" type="text/css" /> 
-    <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.structure.css" rel="stylesheet" type="text/css" /> 
-    <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.theme.css" rel="stylesheet" type="text/css" /> -->
+    <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.structure.css" rel="stylesheet" type="text/css" /> -->
+    <link href="<?php echo BASE_URL; ?>public/lightslider/css/lightslider.css" rel="stylesheet" type="text/css" /> 
+    <link href="<?php echo BASE_URL; ?>public/lightGallery/src/css/lightgallery.css" rel="stylesheet" type="text/css" /> 
     <!-- Custom CSS -->
     <link href="<?php echo $_layoutParams['ruta_css']; ?>layout.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap.css" rel="stylesheet" type="text/css" />
@@ -43,7 +44,7 @@
 </head>
 
 <body id="page-top">
-
+<div class="loader"></div>
 <!--    <div class="preloader">
       <div class="preloader-logo"><img src="<?php echo BASE_URL?>public/img/peque.jpg" alt="" width="151" height="44" srcset="images/logo-default-151x44.png 2x"/>
       </div>

@@ -19,7 +19,7 @@ class recuperarController extends Controller
             else:
             $this->_view->usu=0;
             endif;
-            $this->_view->area_l="apagada";
+           
         
         $this->_view->titulo = 'Recuperar Cuenta';
         $this->_view->setJs(array('recuperar'));
@@ -29,7 +29,7 @@ class recuperarController extends Controller
     }
 
     public function cambiar(){
-        $this->_view->area_l="apagada";
+       
 		 
           $this->_view->titulo = 'Cambiar Contraseña';
          $this->_view->setJs(array('recuperar'));

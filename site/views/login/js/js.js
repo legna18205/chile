@@ -18,11 +18,7 @@ $(document).ready(function(){
 function getFbUserData(){
     FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
     function (response) {
-      console.log(response);
-        console.log(response.first_name);
-        console.log(response.last_name);
-        console.log(response.email);
-        console.log(response.picture.data.url);
+      
 
         var nombre=response.first_name+" "+response.last_name;
         var email=response.email;
@@ -37,7 +33,7 @@ function getFbUserData(){
 
               }, function(data) {
 
-              console.log(data);
+              
 
 
                   var html='';
@@ -61,7 +57,8 @@ function getFbUserData(){
 
                 $('#avatar-mini').css('background-image', 'url("'+data.foto+'")'); 
                 $('#avatar-mini').css('background-size', 'contain'); 
-
+                
+                $(location).attr('href',base_url);
 
               },"json");
 
@@ -77,7 +74,7 @@ function getFbUserData(){
 
 FB.login(function(response) {
     if (response.authResponse) {
-     console.log('Welcome!  Fetching your information.... ');
+     
      getFbUserData();
     } else {
      $('#error-login').html('error de logueo con Facebook');
@@ -113,24 +110,19 @@ FB.login(function(response) {
   };
 
   function attachSignin(element) {
-    console.log(element.id);
+  
     auth2.attachClickHandler(element, {},
         function(googleUser) {
            var profile = googleUser.getBasicProfile();
- /*          console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-           console.log('Full Name: ' + profile.getName());
-           console.log('Given Name: ' + profile.getGivenName());
-           console.log('Family Name: ' + profile.getFamilyName());
-           console.log("Image URL: " + profile.getImageUrl());
-           console.log("Email: " + profile.getEmail());*/
+ 
            var id_token = googleUser.getAuthResponse().id_token;
 
-          // console.log(id_token);
+     
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', 'https://localhost.com/tokensignin');
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 xhr.onload = function() {
-                console.log('Signed in as----->: ' + xhr.responseText);
+               
                 };
                 xhr.send('idtoken=' + id_token);
 
@@ -144,7 +136,7 @@ FB.login(function(response) {
 
               }, function(data) {
 
-              console.log(data.email);
+            
 
 
                   var html='';
@@ -168,8 +160,8 @@ FB.login(function(response) {
 
                 $('#avatar-mini').css('background-image', 'url("'+data.foto+'")'); 
                 $('#avatar-mini').css('background-size', 'contain'); 
-
-
+                
+                $(location).attr('href',base_url);
               },"json");
 
 

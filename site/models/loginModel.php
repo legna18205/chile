@@ -25,14 +25,13 @@ class loginModel extends Model
         
         return $datos->fetch();
     }
-    public function registrarUsuario($foto,$email,$nombre)
+    public function registrarUsuario($foto,$email,$nombre,$password,$login)
     {
 
         
         
-       
 
-         $sql="insert into usuario values ('','$foto','2', '$email','','','1','$nombre')";
+         $sql="insert into usuario values ('','$foto','2', '$email','$login','" . Hash::getHash('sha1', $password, HASH_KEY) ."','1','$nombre')";
         $this->_db->query($sql);
          
         

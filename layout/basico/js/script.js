@@ -1,6 +1,10 @@
 "use strict";
 (function () {
 
+$(window).load(function() {
+    $(".loader").fadeOut("slow");
+});
+
 	// Global variables
 	var userAgent = navigator.userAgent.toLowerCase(),
 			initialDate = new Date(),
