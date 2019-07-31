@@ -79,7 +79,7 @@ class loginController extends Controller
                 $this->email($_POST['email'],$_POST['nombre'],'Google',$newpass,$login);
             }
                 $imagen = file_get_contents($_POST['foto']);
-                $url='public/img/'.$_POST['email'].'.jpg';
+                $url='public/img/profile/'.$_POST['email'].'.jpg';
                 //echo $url;
                 file_put_contents($url, $imagen);
                     

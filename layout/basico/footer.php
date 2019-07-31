@@ -79,9 +79,9 @@
         </div>
         <div class="footer-advanced-aside">
           <div class="container">
-            <div class="footer-advanced-layout"><a class="brand" href="index.html"><img src="<?php echo BASE_URL ?>public/img/logo-light-115x34.png" alt="" width="115" height="34" srcset="images/logo-light-115x34.png 2x"/></a>
+            <div class="footer-advanced-layout"><a class="brand" href="index.html"><img src="<?php echo BASE_URL ?>public/img/logo-light-115x34.pngg" alt="" width="115" height="34" srcset="images/logo-light-115x34.png 2x"/></a>
               <!-- Rights-->
-              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="https://www.templatemonster.com">TemplateMonster</a></p>
+              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="#">xxxxxxxxxxx</a></p>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@
  <!--js del api de google para los logueos-->
          
  <!-- Publicos -->
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX9gzsT69hr5gfCpywoU3OqViGU0yVRI4&callback=iniciarMap"></script>
 
 <!-- <script src="<?php echo BASE_URL; ?>public/js/jquery.js" type="text/javascript"></script> -->
 
@@ -102,7 +102,7 @@
 <script src="<?php echo $_layoutParams['ruta_js']; ?>core.min.js"></script>
 <script src="<?php echo $_layoutParams['ruta_js']; ?>script.js" type="text/javascript"></script>
 <script src="<?php echo BASE_URL; ?>public/lightslider/js/lightslider.js"></script>
-<script src="<?php echo BASE_URL; ?>public/lightGallery/src/js/lightgallery.min.js"></script>
+<script src="<?php echo BASE_URL; ?>public/lightGallery/src/js/lightgallery.js"></script>
 <script src="<?php echo BASE_URL; ?>public/lightGallery/lib/jquery.mousewheel.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/lightGallery/modules/lg-fullscreen.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/lightGallery/modules/lg-thumbnail.min.js"></script>

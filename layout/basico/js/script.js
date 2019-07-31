@@ -433,15 +433,7 @@ $(window).load(function() {
 		 * @desc Initialize Bootstrap tooltip with required placement
 		 * @param {string} tooltipPlacement
 		 */
-		function initBootstrapTooltip(tooltipPlacement) {
-			plugins.bootstrapTooltip.tooltip('dispose');
 
-			if (window.innerWidth < 576) {
-				plugins.bootstrapTooltip.tooltip({placement: 'bottom'});
-			} else {
-				plugins.bootstrapTooltip.tooltip({placement: tooltipPlacement});
-			}
-		}
 
 		/**
 		 * @desc Initialize the gallery with set of images

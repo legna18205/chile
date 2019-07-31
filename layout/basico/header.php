@@ -35,6 +35,7 @@
     <link href="<?php echo $_layoutParams['ruta_css']; ?>style.css" rel="stylesheet" type="text/css" id="main-styles-link" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>nav.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
     <!-- CSS de la vista, se cargan de manera dinamica los archivos css que tenga la vista definida en su carpeta css y es llamado en el contralador de cada vista..  -->
     <?php if(isset($_layoutParams['css']) && count($_layoutParams['css'])): ?>
         <?php for($i=0; $i < count($_layoutParams['css']); $i++): ?>
@@ -80,14 +81,14 @@
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="<?php echo BASE_URL ?>">Home</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a>
+                   <!--  <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
-                    </li>
+                    </li> -->
                     <li class="rd-nav-item boton-usuario-login">
                       <?php if (session::get('autenticado')): ?>                
                       <div class="dropdown ">
@@ -97,6 +98,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <a class="dropdown-item" href="<?php echo BASE_URL; ?>recuperar/cambiar">Cambiar Contraseña</a>
+                          <a class="dropdown-item" href="<?php echo BASE_URL; ?>recuperar/cambiar">Actualizar Datos</a>
                           <a class="dropdown-item" href="<?php echo BASE_URL; ?>login/cerrar">Cerrar Sesión</a>
                         </div>
                       </div>

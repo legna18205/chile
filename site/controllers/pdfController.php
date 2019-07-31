@@ -7,16 +7,7 @@ class pdfController extends Controller
     public function __construct() {
         parent::__construct();
         $this->getLibrary('fpdf');
-		$this->_orden_de_pago=$this->loadModel('orden_de_pago');
-		$this->_proveedor=$this->loadModel('proveedor');
-		$this->_banco=$this->loadModel('banco');
-		$this->includeModel('pago');
-		$this->includeModel('transferencia');
-		$this->includeModel('cheque');
-		$this->includeModel('chequera');
-		$this->includeModel('factura');
-		$this->includeModel('retencion');
-		$this->includeModel('descuento');
+	
 				
         $this->_pdf = new fpdf;
     }

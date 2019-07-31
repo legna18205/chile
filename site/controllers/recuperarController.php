@@ -82,7 +82,7 @@ echo json_encode($this->_recuperar->buscar_usuario($_POST['actual'],session::get
 
 
 
-     $this->getLibrary('class.phpmailer');
+            $this->getLibrary('class.phpmailer');
             
             $mail = new PHPMailer();
             $mail->IsSMTP(); 
