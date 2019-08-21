@@ -1,10 +1,6 @@
 <section class="section section-md">
-
-
-<div class="container">
- 
+<div class="container"> 
   <div class="row">
-
     <div class="col-sm">
     </div>
     <div class="col-sm login-py">
@@ -29,7 +25,7 @@
             <i class="fa fa-user" aria-hidden="true"></i>
           </span>
         </div>
-        <input type="text" name="usuario" class="form-control" value="<?php if(isset($this->datos)) echo $this->datos['usuario']; ?>" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" name="usuario" class="form-control" value="<?php if(isset($this->datos)) echo $this->datos['usuario']; ?>" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1">
       </div>
 
        <div class="input-group mb-3">
@@ -38,7 +34,7 @@
             <i class="fa fa-unlock-alt" aria-hidden="true"></i>
           </span>
         </div>
-        <input type="text" name="pass" class="form-control"  placeholder="Username" aria-label="password" aria-describedby="basic-addon1">
+        <input type="password" name="pass" class="form-control"  placeholder="Contraseña" aria-label="password" aria-describedby="basic-addon1">
       </div>
 
         <div class="boton-login">
@@ -90,11 +86,11 @@
           </div>
       </div>
       </div>
+      <label for="example-search-input" class="col-12 col-form-label"><center><a href="<?php echo BASE_URL?>registro">Registrate</a></center></label>
     </div>
     <div class="col-sm">
       
     </div>
   </div>
 </div>
-
 </section>

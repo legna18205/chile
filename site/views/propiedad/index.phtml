@@ -2,49 +2,19 @@
   <div class="container">
     <div class="row margin-top">
       <div class="col-lg-10 col-xl-8 div-galeria-principal">
-        <h6 class=" font-weight-bold">Nombre propiedad cargado dinamicamente</h6>      
+        <h6 class="linea font-weight-bold"><?php echo $retVal = ($this->bn==1) ? $this->datos['titulo'] : '' ; ?></h6>
         	<div class="col-md-12">
-          		<ul id="lightSlider">
-   					<li data-thumb="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg">
-   						<img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg"/>
-   				    	<h3>First Slide</h3>
-   				    	<p>Lorem ipsum Cupidatat quis pariatur anim.</p>
-   					</li>
-   					<li data-thumb="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg">
-   						<img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg" />
-   				    	<h3>Second Slide</h3>
-   				    	<p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-   					</li>
-   					<li data-thumb="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg">
-   						<img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg" />
-   				    	<h3>3 Slide</h3>
-   				    	<p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-   					</li>
-   					<li data-thumb="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg">
-   						<img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg" />
-   				    	<h3>4 Slide</h3>
-   				    	<p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-   					</li>
-   					<li data-thumb="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg">
-   						<img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg" />
-   				    	<h3>5 Slide</h3>
-   				    	<p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-   					</li>
-   					<li data-thumb="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg">
-   						<img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg" />
-   				    	<h3>6 Slide</h3>
-   				    	<p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-   					</li>
-   					<li data-thumb="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg">
-   						<img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg" />
-   				    	<h3>7 Slide</h3>
-   				    	<p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-   					</li>
-   				</ul>
-            </div>
+          	<ul id="lightSlider">                                  
+              <?php for ($i=0; $i < count($this->fotos) ; $i++):?>                      
+                <li data-thumb="<?php echo BASE_URL.$this->fotos[$i]['grande'] ?>">
+                  <img src="<?php echo BASE_URL.$this->fotos[$i]['grande'] ?>"/>
+                </li>
+              <?php endfor; ?>
+            </ul>
+          </div>
       </div>
       <div class="col-lg-2 col-xl-4">
-        	<h6 class="linea">Contacto</h6>
+        <h6 class="linea">Contacto</h6>
         <div class="col-md-12 formulario_contacto">
           <form>
             <div class="form-group">
@@ -89,18 +59,14 @@
         		<div class="col-md-12 wow-outer">
         	 		<div class="wow fadeSlideInUp">
         	 			<ul>
-        	 				<li>Precio (arriendo/costo)</li>
-        	 				<li>Tipo de inmueble</li>
-        	 				<li>Direccion</li>
-        	 				<li>Region</li>
-        	 				<li>Ciudad</li>
-        	 				<li>Comuna</li>
-        	 				<li>Superficie total</li>
-        	 				<li>Superficie Construida</li>
-        	 				<li>Año de construccion</li>
-        	 				<li>Dormitorios</li>
-        	 				<li>Baños</li>
-        	 				<li>Estacionamiento</li>
+        	 				<li><?php echo $retVal = ($this->bn==1) ? $this->datos['direccion'] : '' ; ?></li>
+        	 				<li><?php echo $retVal = ($this->bn==1) ? $this->datos['referencia'] : '' ; ?></li>
+        	 				<li><?php echo $retVal = ($this->bn==1) ? $this->datos['Precio'] : '' ; ?></li>
+        	 				<li><?php echo $retVal = ($this->bn==1) ? $this->datos['contrato'] : '' ; ?></li>
+        	 				<li><?php echo $retVal = ($this->bn==1) ? $this->datos['espacio'] : '' ; ?></li>
+        	 				<li><?php echo $retVal = ($this->bn==1) ? $this->datos['cantp'] : '' ; ?></li>
+        	 				<li><?php echo $retVal = ($this->bn==1) ? $this->datos['cantb'] : '' ; ?></li>
+                  <li><?php echo $retVal = ($this->bn==1) ? $this->datos['Canta'] : '' ; ?></li>
         	 			</ul>
         	 		</div>
         	 	</div>
@@ -108,7 +74,8 @@
         	<div class="row row-30">
         	 	<div class="col-md-12 wow-outer">
         	 	  <div class="wow fadeSlideInUp">
-        	 	    <label class="">Descripcion</label>
+        	 	    <label class="">Descripcion</label><br>
+                  <?php echo $retVal = ($this->bn==1) ? $this->datos['descrip'] : '' ; ?>
         	 	  </div>
         	 	</div>
     		</div>

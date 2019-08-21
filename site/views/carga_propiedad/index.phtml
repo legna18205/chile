@@ -1,0 +1,192 @@
+<section class="section section-md">
+	<div class="container top-carga">
+		<div class="row">
+			<div class="col-2">
+			</div>
+			<div class="col">				
+				<div class="row">
+					<div class="col-12 titulo-formulario tituloo  font-weight-bold wow-outer linea">
+							Publicar
+					</div>
+					
+				</div>
+
+				<div  id="pes" class="pes row">
+					<div class="efectt active-efectt" id="uno">
+						<div class="col-12 furmulario">
+						<div class="form-group row">
+						  <label for="example-text-input" class="col-3 col-form-label">Titulo <font class="obligatorio">*</font></label>
+						  <div class="col">
+						    <input class="form-control" type="text" value="<?php echo $retVal = ($this->bn==1) ? $this->datos['titulo'] : '' ; ?>" id="titulo"  autofocus="true" required>
+						  </div>
+						</div>
+							<div class="form-group row">
+							  <label for="example-search-input" class="col-3 col-form-label">Precio <font class="obligatorio">*</font></label>
+							  <div class="col">
+							    <input class="form-control" type="nunber"  value="<?php echo $retVal = ($this->bn==1) ? $this->datos['Precio'] : '' ; ?>" id="Precio" required>
+							  </div>
+							</div>
+							<div class="form-group row">
+							  <label for="example-search-input" class="col-3 col-form-label">Contrato</label>
+							  <div class="col">
+							  	<?php if ($this->bn==1): ?>
+									<?php 	if ($this->datos['contrato']=='Venta'): ?>
+										<select class="form-control" type="text"  id="contrato">
+							    			<option value="">--Seleccione--</option>
+							    			<option value="Venta" selected="selected">Venta</option>
+							    			<option value="Arriendo">Arriendo</option>
+							    		</select>
+									<?php elseif ($this->datos['contrato']=='Arriendo'): ?>
+										<select class="form-control" type="text"  id="contrato">
+							    			<option value="">--Seleccione--</option>
+							    			<option value="Venta">Venta</option>
+							    			<option value="Arriendo" selected="selected">Arriendo</option>
+							    		</select>
+									<?php endif; ?>
+								<?php else:	?>							
+							    <select class="form-control" type="text"  id="contrato">
+							    	<option value="">--Seleccione--</option>
+							    	<option value="Venta">Venta</option>
+							    	<option value="Arriendo">Arriendo</option>
+							    </select>
+								<?php endif; ?>
+							  </div>
+							</div>
+							<div class="form-group row">
+							  <label for="example-search-input" class="col-3 col-form-label">Espacio</label>
+							  <div class="col">
+							    <select class="form-control" type="text"  id="espacio">
+							    	<option value="">--Seleccione--</option>
+							    	<option value="Terreno">Terreno</option>
+							    	<option value="Casa">Casa</option>
+							    	<option value="apartamento">apartamento</option>
+							    </select>
+							  </div>
+							</div>
+							<div class="form-group row">
+							  <label for="" class="col-3 col-form-label">cant. de piezas</label>
+							  <div class="col">
+							    <input class="form-control" type="text"  value="<?php echo $retVal = ($this->bn==1) ? $this->datos['cantp'] : '' ; ?>" id="cantp">
+							  </div>
+							</div>
+							<div class="form-group row">
+							  <label  class="col-3 col-form-label">cant. baños</label>
+							  <div class="col">
+							    <input class="form-control" type="text"  value="<?php echo $retVal = ($this->bn==1) ? $this->datos['cantb'] : '' ; ?>" id="cantb">
+							  </div>
+							</div>
+							<div class="form-group row">
+							  <label  class="col-3 col-form-label">Cant. anexos</label>
+							  <div class="col">
+							    <input class="form-control" type="text"  value="<?php echo $retVal = ($this->bn==1) ? $this->datos['Canta'] : '' ; ?>" id="Canta">
+							  </div>
+							</div>
+							<div class="form-group row">
+							  <label  class="col-3 col-form-label">Descripcion</label>
+							  <div class="col">
+							    <textarea class="form-control" type="text"  value="" id="descrip">
+									<?php echo $retVal = ($this->bn==1) ? $this->datos['descrip'] : '' ; ?>
+							    </textarea>
+							  </div>
+							</div>
+							
+							
+						</div>
+					</div>
+					<div class="efectt" id="dos">
+
+							<div class="form-group row">
+							  <label for="example-search-input" class="col-3 col-form-label">Region</label>
+							  <div class="col">
+							    <select class="form-control"  value="" id="region">
+							    	
+							    	<option value="">--Seleccione--</option>
+							    	
+							    	<?php for ($i=0; $i < count($this->_regiones) ; $i++):?>
+
+							    	<option value="<?php echo $this->_regiones[$i]['id']; ?>" ><?php echo $this->_regiones[$i]['region']; ?></option>	
+							    		
+
+							    	<?php endfor; ?>
+							    </select>
+							  </div>
+							</div>
+							<div class="form-group row">
+							  <label for="example-search-input" class="col-3 col-form-label">Provincia</label>
+							  <div class="col">
+							    <select class="form-control"  value="" id="provincia">
+							    	
+							    	<option value="">--Seleccione--</option>
+							    	
+							    </select>
+							  </div>
+							</div>
+							<div class="form-group row">
+							  <label for="example-search-input" class="col-3 col-form-label">Comuna</label>
+							  <div class="col">
+							    <select class="form-control"  value="" id="comuna">
+							    	
+							    	<option value="">--Seleccione--</option>
+							    	
+							    </select>
+							  </div>
+							</div>
+							<div class="form-group row">
+							  <label  class="col-3 col-form-label">Direccion</label>
+							  <div class="col">
+							    <input class="form-control" type="text"  value="<?php echo $retVal = ($this->bn==1) ? $this->datos['direccion'] : '' ; ?>" id="direccion">
+							  </div>
+							</div>
+							<div class="form-group row">
+							  <label  class="col-3 col-form-label">Referencia</label>
+							  <div class="col">
+							    <textarea class="form-control" type="text"  value="" id="referencia"><?php echo $retVal = ($this->bn==1) ? $this->datos['referencia'] : '' ; ?></textarea>
+							  </div>
+							</div>
+							<div id="map">div map</div>
+					</div>
+					<div class="efectt" id="tres">
+					
+					<div id='carga-img' class="dropzone"></div>	  
+	 			<div class="fotos-viejas row">
+						<?php if ($this->bn==1): ?>
+							<?php for ($i=0; $i < count($this->datos['fotos']) ; $i++): ?>
+								<div class="miniatura" data-id="<?php echo $this->datos['fotos'][$i]['id_fotos']; ?>">
+									<div class="x" data-id='<?php echo $this->datos['fotos'][$i]['id_fotos']; ?>'>x</div>
+									<img src="<?php echo BASE_URL.$this->datos['fotos'][$i]['pequena'];  ?>">
+								</div>
+								
+							<?php endfor; ?>
+						<?php endif ?>
+				</div>
+					</div>
+
+				</div>
+			
+				<div class="col-12 wow-outer" style="margin-top: 41px;">
+          					 <center> <a class="button button-primary button-winona button-md" data-id="<?php echo $this->id; ?>" data-bn="<?php echo $this->bn; ?>"  id="btn_enviar">
+          					    <div class="content-original">
+          					      Guardar
+          					    </div>
+          					    <div class="content-dubbed">
+          					      Guardar
+          					    </div>
+          					  </a></center>
+          		</div>
+        
+
+			</div>
+			<div class="col-2">
+				
+		
+				
+
+
+
+
+
+			</div>
+								
+		</div>
+	</div>
+</section>

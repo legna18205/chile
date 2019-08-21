@@ -9,82 +9,38 @@
           <h3 class="text-uppercase font-weight-bold wow-outer tituloo"><span class="wow slideInDown">Popular properties</span></h3>
 
           <div class="row row-lg-50 row-35 offset-top-2">
+            
+            <?php  for ($i=0; $i < count($this->propiedades) ; $i++):?>
             <div class="col-xl-3 col-gl-4 col-md-6 col-sm-12 col-12 wow-outer">
               <!-- Post Modern-->
-              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="<?php echo BASE_URL ?>propiedad"><img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg" alt="" width="571" height="353"></a>
-                <h4 class="post-modern-title"><a class="post-modern-title" href="<?php echo BASE_URL ?>propiedad">5619 Walnut Hill Ln, Dallas, TX 75229</a></h4>
+              <article class="post-modern wow slideInLeft"><a class="post-modern-media propiedad" href="#" data-id="<?php print_r($this->propiedades[$i]['id_propiedad']); ?>">
+                <?php if(isset($this->propiedades[$i]['fotos'][0]['grande'])): ?>
+                  <img src="<?php echo BASE_URL.$this->propiedades[$i]['fotos'][0]['grande'];?>" alt="" width="571" height="353">
+                <?php else: ?>
+                  <img src="<?php echo BASE_URL ?>public/img/casa_out.png" alt="" width="571" height="353">
+                <?php endif;?>
+              </a>
+                <h4 class="post-modern-title"><a class="post-modern-title propiedad" 
+                  href="#" data-id="<?php print_r($this->propiedades[$i]['id_propiedad']); ?>">
+                  
+                  <?php print_r($this->propiedades[$i]['titulo']); ?>
+                </a></h4>
                 <div class=" row descrip">
-          		<div class="col-3 desc"><i class="fa fa-car" aria-hidden="false"></i> 1</div>
-          		<div class="col-3 desc"><i class="fa fa-bath" aria-hidden="true"></i> 2</div>
-          		<div class="col-3 desc"><i class="fa fa-bed" aria-hidden="true"></i> 3</div>
-          		<div class="col-3 desc"><i class="fa fa-building" aria-hidden="true"></i> 4</div>
+          		<div class="col-3 desc"><i class="fa fa-car" aria-hidden="false"></i><?php print_r($this->propiedades[$i]['cantp']); ?></div>
+          		<div class="col-3 desc"><i class="fa fa-bath" aria-hidden="true"></i><?php print_r($this->propiedades[$i]['cantb']); ?></div>
+          		<div class="col-3 desc"><i class="fa fa-bed" aria-hidden="true"></i><?php print_r($this->propiedades[$i]['Canta']); ?></div>
+          		<div class="col-3 desc"><i class="fa fa-building" aria-hidden="true"></i><?php print_r($this->propiedades[$i]['Canta']); ?></div>
                   	</div>
-                <ul class="post-modern-meta">
-                  
-                  <li>30 Sq. Ft.</li>
-                  <li>3 Bedrooms</li>
+                <ul class="post-modern-meta">                  
+                  <li><?php print_r($this->propiedades[$i]['espacio']); ?></li>
+                  <li><?php print_r($this->propiedades[$i]['contrato']); ?></li>
                 </ul>
                 
               </article>
             </div>
-            <div class="col-xl-3 col-gl-4 col-md-6 col-sm-12 col-12 wow-outer">
-              <!-- Post Modern-->
-              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="<?php echo BASE_URL ?>propiedad"><img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg" alt="" width="571" height="353"></a>
-                <h4 class="post-modern-title"><a class="post-modern-title" href=href="<?php echo BASE_URL ?>propiedad">5619 Walnut Hill Ln, Dallas, TX 75229</a></h4>
-                <div class=" row descrip">
-              <div class="col-3 desc"><i class="fa fa-car" aria-hidden="false"></i> 1</div>
-              <div class="col-3 desc"><i class="fa fa-bath" aria-hidden="true"></i> 2</div>
-              <div class="col-3 desc"><i class="fa fa-bed" aria-hidden="true"></i> 3</div>
-              <div class="col-3 desc"><i class="fa fa-building" aria-hidden="true"></i> 4</div>
-                    </div>
-                <ul class="post-modern-meta">
-                  
-                  <li>30 Sq. Ft.</li>
-                  <li>3 Bedrooms</li>
-                </ul>
-                
-              </article>
-            </div>
-            <div class="col-xl-3 col-gl-4 col-md-6 col-sm-12 col-12 wow-outer">
-              <!-- Post Modern-->
-              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="<?php echo BASE_URL ?>propiedad"><img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg" alt="" width="571" height="353"></a>
-                <h4 class="post-modern-title"><a class="post-modern-title" href="<?php echo BASE_URL ?>propiedad">5619 Walnut Hill Ln, Dallas, TX 75229</a></h4>
-                <div class=" row descrip">
-              <div class="col-3 desc"><i class="fa fa-car" aria-hidden="false"></i> 1</div>
-              <div class="col-3 desc"><i class="fa fa-bath" aria-hidden="true"></i> 2</div>
-              <div class="col-3 desc"><i class="fa fa-bed" aria-hidden="true"></i> 3</div>
-              <div class="col-3 desc"><i class="fa fa-building" aria-hidden="true"></i> 4</div>
-                    </div>
-                <ul class="post-modern-meta">
-                  
-                  <li>30 Sq. Ft.</li>
-                  <li>3 Bedrooms</li>
-                </ul>
-                
-              </article>
-            </div>
-            <div class="col-xl-3 col-gl-4 col-md-6 col-sm-12 col-12 wow-outer">
-              <!-- Post Modern-->
-              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="<?php echo BASE_URL ?>propiedad"><img src="<?php echo BASE_URL ?>public/img/grid-blog-1-571x353.jpg" alt="" width="571" height="353"></a>
-                <h4 class="post-modern-title"><a class="post-modern-title" href="<?php echo BASE_URL ?>propiedad">5619 Walnut Hill Ln, Dallas, TX 75229</a></h4>
-                <div class=" row descrip">
-              <div class="col-3 desc"><i class="fa fa-car" aria-hidden="false"></i> 1</div>
-              <div class="col-3 desc"><i class="fa fa-bath" aria-hidden="true"></i> 2</div>
-              <div class="col-3 desc"><i class="fa fa-bed" aria-hidden="true"></i> 3</div>
-              <div class="col-3 desc"><i class="fa fa-building" aria-hidden="true"></i> 4</div>
-                    </div>
-                <ul class="post-modern-meta">
-                  
-                  <li>30 Sq. Ft.</li>
-                  <li>3 Bedrooms</li>
-                </ul>
-                
-              </article>
-            </div>
-         
-            
-            
-            <div class="col-12 wow-outer"><a class="button button-primary button-winona button-md" href="#"><div class="content-original">view More properties</div><div class="content-dubbed">view More properties</div></a></div>
+          <?php endfor;?>
+                       
+            <div class="col-12 wow-outer"><a class="button button-primary button-winona button-md" href="#"><div class="content-original">Ver mas Propiedades</div><div class="content-dubbed">Ver mas Propiedades</div></a></div>
           </div>
 
 

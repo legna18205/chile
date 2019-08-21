@@ -48,7 +48,10 @@ function localizacion(){
 	localizacion();
 
 	//navigator.geolocation.getCurrentPosition(localizacion,error);
-
+	$('.propiedad').on('click',function(){
+		var id=$(this).data('id');
+		window.location.href=base_url+'propiedad/index/'+id;
+	});
 
 
 

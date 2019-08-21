@@ -11,9 +11,8 @@ class View
         $this->_controlador = $peticion->getControlador();
         $this->_js = array();
         $this->_css = array();
-       
-
-		
+        $this->_metodos = $peticion->getMetodo();
+        $this->_args = $peticion->getArgs();
     }
     
     public function renderizar($vista)

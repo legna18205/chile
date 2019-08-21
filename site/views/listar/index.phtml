@@ -1,0 +1,58 @@
+
+
+<section class="section novi-background section-sm medio">
+	<?php if (count($this->_publicacion)==0): ?>
+	<div class="alert alert-warning" role="alert">
+  No tienes publicaciones en Propieades ya.!! <a href="<?php echo BASE_URL ?>carga_propiedad">Publica aqui.</a>
+</div>
+<?php endif ?>
+<div class="row">
+	<div class="col-2"></div>
+	<div class="container py-3 col-8 publicaciones_cart">
+		<?php for ($i=0; $i < count($this->_publicacion) ; $i++): ?>
+
+			<div class="card" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'>
+
+				<div class="row ">
+					<div class="x" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'>x</div>
+					<div class="lapiz" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'><i class="fa fa-pencil" aria-hidden="true"></i>
+</div>
+					<div class="col-md-4">
+						<div class="precio"><?php echo $this->_publicacion[$i]['Precio']; ?></div>
+						<?php if (isset($this->_publicacion[$i]['fotos'][0]['pequena'])): ?>
+							<img class="w-100"  src="<?php echo $this->_publicacion[$i]['fotos'][0]['grande']; ?>">
+						<?php else: ?>
+							<img class="w-100" src="public/img/casa_out.png">
+						<?php endif; ?>
+
+					</div>
+					<div class="col-md-8 px-3">
+						<div class="card-block px-3">
+
+							<h4 class="card-title" style="padding-top: 12px;"><?php echo $this->_publicacion[$i]['titulo']; ?><font class="fecha_pu"><?php echo $this->_publicacion[$i]['fecha_pu']; ?></font><span class="badge badge-primary infoo"><?php echo $this->_publicacion[$i]['contrato']; ?></span><span class="badge badge-success infoo"><?php echo $this->_publicacion[$i]['espacio']; ?></span></h4>
+							<div class="descripcion_publica">
+								<p class="card-text"><?php echo $this->_publicacion[$i]['descrip']; ?></p>
+							</div>
+							
+							
+							<div class="row iconoss">
+								
+								<div class=" col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-car" aria-hidden="false"></i> <?php print_r($this->_publicacion[$i]['cantp']); ?></div>
+								<div class=" col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-bath" aria-hidden="true"></i> <?php print_r($this->_publicacion[$i]['cantb']); ?></div>
+								<div class=" col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-bed" aria-hidden="true"></i> <?php print_r($this->_publicacion[$i]['Canta']); ?></div>
+								<div class=" col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-building" aria-hidden="true"></i> <?php print_r($this->_publicacion[$i]['Canta']); ?></div>
+								
+							</div>
+							<a href="#" class="btn btn-primary car-btn">Read More</a>
+							
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		<?php endfor; ?>
+	</div>
+</div>
+</section>
+

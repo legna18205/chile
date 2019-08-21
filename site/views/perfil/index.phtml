@@ -1,0 +1,67 @@
+<?php print_r($this->usuario['nombre']); ?>
+<section class="section novi-background section-sm">
+  <div class="container">
+    <div class="row margin-top">
+      <div class="col-lg-10 col-xl-8 div-galeria-principal">
+        <h6 class="linea font-weight-bold">Datos Basicos</h6>      
+        	<div class="col-md-12 formulario_contacto">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Rut</label>
+              <input type="email" class="form-control" id="rut_usuario" placeholder="RUT" value="<?php echo $this->usuario['per_rut']; ?>">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Nombre</label>
+              <input type="email" class="form-control" id="nombre_usuario" placeholder="nombre" value="<?php echo $this->usuario['per_nombre']; ?>">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Telefono</label>
+              <input type="email" class="form-control" id="telefono_usuario" placeholder="telefono" value="<?php echo $this->usuario['per_telefono']; ?>">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email</label>
+              <input type="email" class="form-control" id="email_usuario" placeholder="name@example.com" value="<?php echo $this->usuario['email']; ?>">
+            </div>           
+          
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Observaciones/Descripcion</label>
+              <textarea class="form-control" id="obs_usuario" rows="3" value="<?php echo $this->usuario['per_obs']; ?>"></textarea>
+            </div>
+            <div class="col-12 wow-outer">
+             <left> <a class="button button-primary button-winona button-md" href="#" id="btn_guardar">
+                <div class="content-original">
+                  Guardar
+                </div>
+                <div class="content-dubbed">
+                  Guardar
+                </div>
+              </a></left>
+            </div>
+            </form>
+        </div>
+      </div>
+      <div class="col-lg-2 col-xl-4">
+        	<h6 class="linea">Ficha/Configuracion</h6>
+        <div class="col-md-12 formulario_contacto">
+          <form>
+            <div id="logo">
+              <img id="avatar_perfil" class="avatar" src="<?php echo BASE_URL.session::get('foto'); ?>"></img>
+              <h1 id="title"><?php echo session::get('nombre'); ?></h1>
+               <a href="#" id="notificaciones"><i class="fa fa-bell"></i></a>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Ver Publicaciones</label>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Crear Empresa</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div hidden>
+  <div id='carga-img' class="dropzone"></div>                  
+</div>

@@ -5,7 +5,7 @@
     <meta content="text/html">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- etiqueta meta con el id de google para la utilizacion de el api de logueo-->
@@ -23,19 +23,21 @@
       <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
       <!--Import materialize.css-->
        <!-- Compiled and minified CSS
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-     -->
-<!--     <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.css" rel="stylesheet" type="text/css" /> 
-    <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.structure.css" rel="stylesheet" type="text/css" /> -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+       -->
+      <!--     <link href="<?php echo BASE_URL; ?>public/css/jquery-ui.css" rel="stylesheet" type="text/css" />-->
     <link href="<?php echo BASE_URL; ?>public/lightslider/css/lightslider.css" rel="stylesheet" type="text/css" /> 
     <link href="<?php echo BASE_URL; ?>public/lightGallery/src/css/lightgallery.css" rel="stylesheet" type="text/css" /> 
-    <!-- Custom CSS -->
+      <!-- Custom CSS -->
     <link href="<?php echo $_layoutParams['ruta_css']; ?>layout.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>style.css" rel="stylesheet" type="text/css" id="main-styles-link" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>nav.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+
+ <link href="<?php echo BASE_URL; ?>public/css/dropzone.css" rel="stylesheet" type="text/css" />
+ <link href="<?php echo BASE_URL; ?>public/css/alertify.bootstrap.css" rel="stylesheet" type="text/css" />
+ <link href="<?php echo BASE_URL; ?>public/css/alertify.core.css" rel="stylesheet" type="text/css" />
     <!-- CSS de la vista, se cargan de manera dinamica los archivos css que tenga la vista definida en su carpeta css y es llamado en el contralador de cada vista..  -->
     <?php if(isset($_layoutParams['css']) && count($_layoutParams['css'])): ?>
         <?php for($i=0; $i < count($_layoutParams['css']); $i++): ?>
@@ -57,7 +59,13 @@
     </div> -->
 
 <div class="page">
-
+  <?php if (session::get('autenticado') && $this->_controlador != 'carga_propiedad' ): ?>
+      <a href="<?php echo BASE_URL ?>carga_propiedad">
+      <div class="botonF1">
+        <span>+</span>
+      </div>
+      </a>
+  <?php endif; ?>
          <!-- Page Header template de tico   
         AIzaSyAuC3tFNMyjX1MM7lOfxN3F05IxytI8HMw
         -->
@@ -81,8 +89,13 @@
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="<?php echo BASE_URL ?>">Home</a>
+                    <li class="rd-nav-item "><a class="rd-nav-link" href="<?php echo BASE_URL ?>">Home</a>
                     </li>
+                    <?php if (session::get('autenticado')): ?>
+                      
+                      <li class="rd-nav-item "><a class="rd-nav-link" href="<?php echo BASE_URL ?>listar">Mis publicaciones</a>
+                    </li>
+                    <?php endif; ?>
                    <!--  <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
@@ -91,20 +104,21 @@
                     </li> -->
                     <li class="rd-nav-item boton-usuario-login">
                       <?php if (session::get('autenticado')): ?>                
-                      <div class="dropdown ">
+                      <div class="dropdown">
                         <button class="rd-nav-link dropdown-toggle btn-usuario" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <div id="avatar-mini" style="background-image: url(<?php echo session::get('foto'); ?>); background-size: contain;"></div>
+                          <div id="avatar-mini" style="background-image: url(<?php  echo BASE_URL.session::get('foto'); ?>); background-size: contain;"></div>
+                          <input type="text" hidden id="email-usuario" value="<?php echo session::get('email'); ?>">
                           <?php echo session::get('email'); ?>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <a class="dropdown-item" href="<?php echo BASE_URL; ?>recuperar/cambiar">Cambiar Contraseña</a>
-                          <a class="dropdown-item" href="<?php echo BASE_URL; ?>recuperar/cambiar">Actualizar Datos</a>
+                          <a class="dropdown-item" href="<?php echo BASE_URL; ?>perfil/" >Perfil</a>
                           <a class="dropdown-item" href="<?php echo BASE_URL; ?>login/cerrar">Cerrar Sesión</a>
                         </div>
                       </div>
                       <?php else: ?>
 
-                        <li class="rd-nav-item boton-usuario-login-no-login"><a class="rd-nav-link" href=<?php BASE_URL ?>"login"><i class="fa fa-user" aria-hidden="true"></i> login</a>
+                        <li class="rd-nav-item boton-usuario-login-no-login"><a class="rd-nav-link" href=<?php BASE_URL ?>"login"><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesion</a>
                         </li>
 
 

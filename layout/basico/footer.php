@@ -1,4 +1,3 @@
-
 <footer class="section novi-background footer-advanced bg-gray-700">
         <div class="footer-advanced-main">
           <div class="container">
@@ -90,7 +89,7 @@
  <!--js del api de google para los logueos-->
          
  <!-- Publicos -->
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX9gzsT69hr5gfCpywoU3OqViGU0yVRI4&callback=iniciarMap"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDejDNf71KNs6Pb6FBJZlDF-5LVryQM2Jg&callback=iniciarMap"></script>
 
 <!-- <script src="<?php echo BASE_URL; ?>public/js/jquery.js" type="text/javascript"></script> -->
 
@@ -101,7 +100,9 @@
  -->
 <script src="<?php echo $_layoutParams['ruta_js']; ?>core.min.js"></script>
 <script src="<?php echo $_layoutParams['ruta_js']; ?>script.js" type="text/javascript"></script>
+<script src="<?php echo BASE_URL; ?>public/js/jquery.mask.js"></script>
 <script src="<?php echo BASE_URL; ?>public/lightslider/js/lightslider.js"></script>
+<script src="<?php echo BASE_URL; ?>public/js/alertify.js"></script>
 <script src="<?php echo BASE_URL; ?>public/lightGallery/src/js/lightgallery.js"></script>
 <script src="<?php echo BASE_URL; ?>public/lightGallery/lib/jquery.mousewheel.min.js"></script>
 <script src="<?php echo BASE_URL; ?>public/lightGallery/modules/lg-fullscreen.min.js"></script>
