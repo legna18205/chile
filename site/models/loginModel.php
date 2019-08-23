@@ -5,7 +5,10 @@ class loginModel extends Model{
     }
     
     public function getUsuario($usuario, $password){
-     $datos = $this->_db->query( 
+      $sql="SELECT * FROM usuario 
+                WHERE email = '$usuario' 
+                AND password = '" . Hash::getHash('sha1', $password, HASH_KEY) ."'";
+    $datos = $this->_db->query( 
                 "SELECT * FROM usuario 
                 WHERE email = '$usuario' 
                 AND password = '" . Hash::getHash('sha1', $password, HASH_KEY) ."'"

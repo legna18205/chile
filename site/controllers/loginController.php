@@ -1,7 +1,5 @@
 <?php
-
-class loginController extends Controller
-{
+class loginController extends Controller{
     private $_login;
     
     public function __construct(){
@@ -9,10 +7,7 @@ class loginController extends Controller
         $this->_login = $this->loadModel('login');
     }
     
-    public function index()
-    {
-
-        
+    public function index(){        
         if(Session::get('autenticado')){
             $this->redireccionar('principal');
         }
@@ -23,8 +18,6 @@ class loginController extends Controller
 
         if(isset($_POST['enviar'])){
             $this->_view->datos = $_POST;
-            
-            
             $row = $this->_login->getUsuario(
                     $_POST['usuario'],
                     $_POST['pass']
@@ -41,7 +34,7 @@ class loginController extends Controller
                 $this->_view->renderizar('index','login');
                 exit;
             }*/
-           // print_r($row);
+           //print_r($row);
                         
             Session::set('autenticado', true);
             Session::set('role', $row['id_role']);
@@ -107,11 +100,11 @@ class loginController extends Controller
     }
     
 
-    public function cerrar()
-    {
+    public function cerrar(){
         Session::destroy();
         $this->redireccionar('login');
     }
+
     public function email($email,$nombre,$tipo,$clave,$login){
             
             //configuracion del servidor de correo///

@@ -7,11 +7,9 @@ var mapdivv = document.getElementById("map");
 		parallelUploads: 7,
 		uploadMultiple: true
 	});
-//mapa de google
+/* mapa de google
 function localizacion(){
-	//console.log(posicion);
-
-	
+	//console.log(posicion);	
 	var coord ={lat:10.4311864 ,lng: -64.1543756};
 	var map = new google.maps.Map(mapdivv,{
 		zoom: 15,
@@ -26,32 +24,26 @@ function localizacion(){
 	});
 }
 localizacion();
-// fin de map
+/ fin de map*/
 
 // carga de archivos
 $('#titulo').on('focus',function(){
 	$("#titulo").css('border-color','#80bdff');
     $("#titulo").css('box-shadow','0 0 0 0.2rem rgba(0, 123, 255, 0.25)');
-   
-    
 });
 $('#Precio').on('focus',function(){
 	$("#Precio").css('border-color','#80bdff');
     $("#Precio").css('box-shadow','0 0 0 0.2rem rgba(0, 123, 255, 0.25)');
-
 });
 
 $('#btn_enviar').click(function() {
-
-var bn=$(this).data('bn');
+	var bn=$(this).data('bn');
 	var id=$(this).data('id');
 
 	if ($("#titulo").val()=="") {
-		console.log('titulo vacio');
-		
+		console.log('titulo vacio');		
 		$("#titulo").css('border-color','#ff000075');
     	$("#titulo").css('box-shadow','rgba(255, 0, 0, 0.25) 0px 0px 0px 0.2rem');
-    	
     	$('html, body').animate({scrollTop:0}, 'slow');
     	$('.efectt').removeClass('active-efectt');
     	$('#uno').addClass('active-efectt');
@@ -61,7 +53,6 @@ var bn=$(this).data('bn');
 		console.log('precio vacio');
 		$("#Precio").css('border-color','#ff000075');
     	$("#Precio").css('box-shadow','rgba(255, 0, 0, 0.25) 0px 0px 0px 0.2rem');
-    	
     	$('html, body').animate({scrollTop:0}, 'slow');
     	$('.efectt').removeClass('active-efectt');
     	$('#uno').addClass('active-efectt');
@@ -72,7 +63,6 @@ var bn=$(this).data('bn');
 	if (myDropzone.files.length==0){
 		enviar_solo_datos(id,bn);
 	}
-
 
     myDropzone.on('sending', function(file, xhr, formData){
     	formData.append('id',id);
@@ -92,13 +82,13 @@ var bn=$(this).data('bn');
     	formData.append('descrip',$('#descrip').val());
 
 	});
-
 	 
     myDropzone.processQueue();
     myDropzone.on('success', function(){
     	//window.location.href=base_url+'listar';
     });
 });
+
 function enviar_solo_datos(id=false,bn=false){
 	$.post(base_url+'carga_propiedad/upfile2',{
 		'bn':bn,
@@ -122,26 +112,16 @@ function enviar_solo_datos(id=false,bn=false){
 }
 //fin de carga
 //taps del formulario
-function tapss(divtaps,elementos) { 
-	
-		
-	
+function tapss(divtaps,elementos) {
+	elementos.forEach(function (elemento, indice, array) {
+	$("#pes").prepend("<div class='col legna-taps' data-afect='"+elemento.data+"'>"+elemento.taps+"<div>");
+	});
 
-			elementos.forEach(function (elemento, indice, array) {
-
-			
-			$("#pes").prepend("<div class='col legna-taps' data-afect='"+elemento.data+"'>"+elemento.taps+"<div>");
-			
-			
-			
-			});
-
-			$(".legna-taps").on('click',function(){
-				console.log(this.dataset.afect);
-				$('.efectt').removeClass('active-efectt');
-				
-			    $('#'+this.dataset.afect).addClass('active-efectt');
-			});
+	$(".legna-taps").on('click',function(){
+		console.log(this.dataset.afect);
+		$('.efectt').removeClass('active-efectt');
+		$('#'+this.dataset.afect).addClass('active-efectt');
+	});
 }
 
 var opciones= [
@@ -153,62 +133,36 @@ var pestaña = new tapss($('#pes'),opciones);
 //fin del taps
 
 
-
-
-
 $('#region').on('change',function(){
-
-
-
 	$.post(base_url+'carga_propiedad/provincias',{
-
 		id:this.value
-
 	},function(e){
-
 		var html="<option value=''>--Seleccione--</option>";
 		for (var i = 0; i < e.length; i++) {
-			
 			html+="<option value='"+e[i]['id']+"''>"+e[i].provincia+"</option>";
-
-		}
-		
+		}		
 		$('#provincia').html(html);
-
 	},'json');
-
 });
 
 $('#provincia').on('change',function(){
-
 	$.post(base_url+'carga_propiedad/comuna',{
-
 		id:this.value
-
 	},function(e){
-
 		var html="<option value=''>--Seleccione--</option>";
 		for (var i = 0; i < e.length; i++) {
-			
 			html+="<option value='"+e[i]['id']+"''>"+e[i].comuna+"</option>";
-
 		}
-		
 		$('#comuna').html(html);
-
 	},'json');
-
 });
 
 
 $('#btn_actualiza').click(function() {
-
 	if ($("#titulo").val()=="") {
-		console.log('titulo vacio');
-		
+		console.log('titulo vacio');		
 		$("#titulo").css('border-color','#ff000075');
     	$("#titulo").css('box-shadow','rgba(255, 0, 0, 0.25) 0px 0px 0px 0.2rem');
-    	
     	$('html, body').animate({scrollTop:0}, 'slow');
     	$('.efectt').removeClass('active-efectt');
     	$('#uno').addClass('active-efectt');
@@ -218,7 +172,6 @@ $('#btn_actualiza').click(function() {
 		console.log('precio vacio');
 		$("#Precio").css('border-color','#ff000075');
     	$("#Precio").css('box-shadow','rgba(255, 0, 0, 0.25) 0px 0px 0px 0.2rem');
-    	
     	$('html, body').animate({scrollTop:0}, 'slow');
     	$('.efectt').removeClass('active-efectt');
     	$('#uno').addClass('active-efectt');
@@ -229,7 +182,6 @@ $('#btn_actualiza').click(function() {
 	if (myDropzone.files.length==0){
 		enviar_solo_datos();
 	}
-
 
     myDropzone.on('sending', function(file, xhr, formData){
     	formData.append('region',$('#region').val());
@@ -245,10 +197,8 @@ $('#btn_actualiza').click(function() {
     	formData.append('cantb',$('#cantb').val());
     	formData.append('Canta',$('#Canta').val());
     	formData.append('descrip',$('#descrip').val());
-
 	});
 
-	 
     myDropzone.processQueue();
     myDropzone.on('success', function(){
     	window.location.href=base_url+'listar';

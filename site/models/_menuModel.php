@@ -1,15 +1,10 @@
 <?php
-
-class _menuModel extends Model
-{
+class _menuModel extends Model{
     public function __construct() {
         parent::__construct();
-    }
-
-    
+    }    
 
 public function menu($id = false){
-
 	if ($id!=false) {
 		$sql = "SELECT menu.* FROM menu,permisos,role,usuario WHERE\n"
     . "menu.id_menu=permisos.id_menu and \n"
@@ -28,11 +23,7 @@ public function menu($id = false){
     . "role.id_role=4";
 	$menu = $this->_db->query($sql);
 	return $menu->fetchall();
-
-
-	}
-
-	
+	}	
 }
 
 

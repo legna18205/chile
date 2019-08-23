@@ -1,7 +1,5 @@
 <?php
-
-class propiedadController extends Controller
-{
+class propiedadController extends Controller{
     private $_propiedad;
     
     public function __construct(){
@@ -27,17 +25,20 @@ class propiedadController extends Controller
       $this->_view->setJs(array('index'));
       $this->_view->setCss(array('index'));
       $this->_view->renderizar('index');
-
+    }
+    
+    public function traer_propiedades(){
+      echo json_encode($this->_propiedad->traer_propiedades($_REQUEST['id']));
     }
 
-      
-      
-        
-     
-    }   
+    public function traer_propiedad_siguiente(){
+      echo json_encode($this->_propiedad->traer_propiedad_siguiente($_REQUEST['id']));
+    }
 
+    public function traer_propiedad_anterior(){
+      echo json_encode($this->_propiedad->traer_propiedad_anterior($_REQUEST['id']));
+    }
 
-
-
+}
 
 ?>

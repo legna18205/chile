@@ -25,7 +25,6 @@ class propiedadModel extends Model{
         $sql ="INSERT into propiedad values('','".session::get('id_usuario')."',CURDATE(),'".$datos['region']."','".$datos['provincia']."','".$datos['comuna']."','".$datos['direccion']."','".$datos['referencia']."','".$datos['titulo']."','".$datos['Precio']."','".$datos['contrato']."','".$datos['espacio']."','".$datos['cantp']."','".$datos['cantb']."','".$datos['Canta']."','".$datos['descrip']."')";
         $datos = $this->_db->query($sql);
     }
-
     function guardar($datos,$fotos){
 
         $sql ="INSERT into propiedad values('','".session::get('id_usuario')."',CURDATE(),'".$datos['region']."','".$datos['provincia']."','".$datos['comuna']."','".$datos['direccion']."','".$datos['referencia']."','".$datos['titulo']."','".$datos['Precio']."','".$datos['contrato']."','".$datos['espacio']."','".$datos['cantp']."','".$datos['cantb']."','".$datos['Canta']."','".$datos['descrip']."')";
@@ -88,19 +87,45 @@ class propiedadModel extends Model{
         $datos = $this->_db->query($sql);
         return $datos->fetchall();
     }
-        public function delete_foto($id){
-        $sql="delete from fotos where id_fotos='$id'";
-      
-       
+    public function traer_propiedades($id){
+        $usuario = $this->_db->query(
+                    "SELECT * from propiedad where id_propiedad = '$id'"
+        );                    
+        $pub = $usuario->fetchall();
+            for ($i=0; $i < count($pub) ; $i++) { 
+                $fotos= $this->_db->query(
+                    "SELECT * from fotos where id_publicacion = '".$pub[$i]['id_propiedad']."'"
+                );
+                $pub[$i]['fotos']=$fotos->fetchall();
+            }
+        return $pub;
+    }
+    public function delete_foto($id){
+        $sql="delete from fotos where id_fotos='$id'";       
          $resultado = $this->_db->query($sql);
         if(!$resultado){
             return 0;
         }
         $resultado = $resultado->rowCount();
         return $resultado;
+    }
 
+    public function traer_propiedad_siguiente($id){
+        $sql="SELECT id_propiedad FROM propiedad 
+                     WHERE 
+                     id_propiedad = (SELECT MIN(id_propiedad) FROM propiedad WHERE id_propiedad > $id)"; 
+        $usuario = $this->_db->query($sql);                    
+        $pub = $usuario->fetch();
+        return $pub;
+    }
 
-
+    public function traer_propiedad_anterior($id){
+        $sql="SELECT id_propiedad FROM propiedad 
+                     WHERE 
+                     id_propiedad = (SELECT MAX(id_propiedad) FROM propiedad WHERE id_propiedad < $id)"; 
+        $usuario = $this->_db->query($sql);                    
+        $pub = $usuario->fetch();
+        return $pub;
     }
 }
 ?>

@@ -21,6 +21,11 @@ class perfilModel extends Model{
     	WHERE per_usu_codigo='".session::get('id_usuario')."'
     	";
     	$datos = $this->_db->query($sql);
+        if(!$datos){
+            return 0;
+        }
+        $datos = $datos->rowCount();
+        return $datos;
     }
      
 }?>
