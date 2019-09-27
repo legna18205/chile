@@ -34,6 +34,7 @@
     <link href="<?php echo $_layoutParams['ruta_css']; ?>style.css" rel="stylesheet" type="text/css" id="main-styles-link" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>nav.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $_layoutParams['ruta_css']; ?>taps.css" rel="stylesheet" type="text/css" />
 
  <link href="<?php echo BASE_URL; ?>public/css/dropzone.css" rel="stylesheet" type="text/css" />
  <link href="<?php echo BASE_URL; ?>public/css/alertify.bootstrap.css" rel="stylesheet" type="text/css" />
@@ -80,7 +81,7 @@
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
               </div>
                <div class="logo-navegacion-peq">
-                  <img class="logoo" src="<?php echo BASE_URL?>public/img/logo2.gif" alt="" width="" height=""/>
+                  <img class="logoo" src="<?php echo BASE_URL?>public/img/logos/prop2.png" alt="" width="" height=""/>
               </div>
             </div>
           </div> 
@@ -89,11 +90,11 @@
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item "><a class="rd-nav-link" href="<?php echo BASE_URL ?>">Home</a>
+                    <li class="rd-nav-item cont-logo"><a class="rd-nav-link" href="<?php echo BASE_URL ?>"><img class="logoo" class="img-fluid" alt="Responsive image" src="<?php echo BASE_URL?>public/img/logos/prop2.png" alt="" width="" height=""/></a>
                     </li>
                     <?php if (session::get('autenticado')): ?>
                       
-                      <li class="rd-nav-item "><a class="rd-nav-link" href="<?php echo BASE_URL ?>listar">Mis publicaciones</a>
+                      <li class="rd-nav-item "><a class="rd-nav-link" href="<?php echo BASE_URL.'listar/index/'.Session::get('email'); ?>">Mis publicaciones</a>
                     </li>
                     <?php endif; ?>
                    <!--  <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a>
@@ -102,7 +103,9 @@
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
                     </li> -->
+
                     <li class="rd-nav-item boton-usuario-login">
+
                       <?php if (session::get('autenticado')): ?>                
                       <div class="dropdown">
                         <button class="rd-nav-link dropdown-toggle btn-usuario" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -118,12 +121,15 @@
                       </div>
                       <?php else: ?>
 
-                        <li class="rd-nav-item boton-usuario-login-no-login"><a class="rd-nav-link" href=<?php BASE_URL ?>"login"><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesion</a>
+                        <li class="rd-nav-item boton-usuario-login-no-login"><a class="rd-nav-link" href=<?php echo BASE_URL ?>login><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesion</a>
                         </li>
 
 
 
                       <?php endif; ?>
+                    </li>
+                    <li class="rd-nav-item boton-usuario-login white">
+                      <?php echo "UF: ".number_format($this->uf,2,",",".") ?>
                     </li>
                   </ul>
                 </div>
@@ -133,7 +139,7 @@
           </nav>
         </div>
       </header>
-
+      <section class="section section-md">
 
  <!-- Page Header fin template de tico   
 AIzaSyAuC3tFNMyjX1MM7lOfxN3F05IxytI8HMw

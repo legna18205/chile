@@ -1,28 +1,52 @@
 
 
-<section class="section novi-background section-sm medio">
+
+	
 	<?php if (count($this->_publicacion)==0): ?>
 	<div class="alert alert-warning" role="alert">
   No tienes publicaciones en Propieades ya.!! <a href="<?php echo BASE_URL ?>carga_propiedad">Publica aqui.</a>
 </div>
 <?php endif ?>
 <div class="row">
-	<div class="col-2"></div>
-	<div class="container py-3 col-8 publicaciones_cart">
+	<div class="col-md-2 .d-none .d-sm-block"></div>
+	<div class="container py-3 col-12  col-ms-12 col-md-12 col-lg-8  publicaciones_cart">
+		<div class="col-12 titulo-formulario tituloo  font-weight-bold wow-outer linea">
+							 
+					</div>
 		<?php for ($i=0; $i < count($this->_publicacion) ; $i++): ?>
 
 			<div class="card" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'>
 
 				<div class="row ">
+					
+					<?php if ($this->_publicacion[$i]['id_usuario']==Session::get('id_usuario')): ?>
+
 					<div class="x" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'>x</div>
 					<div class="lapiz" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'><i class="fa fa-pencil" aria-hidden="true"></i>
 </div>
-					<div class="col-md-4">
-						<div class="precio"><?php echo $this->_publicacion[$i]['Precio']; ?></div>
-						<?php if (isset($this->_publicacion[$i]['fotos'][0]['pequena'])): ?>
-							<img class="w-100"  src="<?php echo $this->_publicacion[$i]['fotos'][0]['grande']; ?>">
+					<?php endif; ?>
+					<div class="col-md-4 propiedad" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'>
+
+						<?php  $monto=str_replace(".", "" , $this->_publicacion[$i]['Precio']); ?>
+						<?php  $monto= str_replace(",", "." , $monto); ?>
+						<?php  $monto_final= $monto; ?>
+						<?php   settype($monto,"double"); ?>
+						<?php  $monto= $monto * $this->uf ; ?>
+
+
+						<?php if ($this->_publicacion[$i]['contrato']=='Venta'):?>
+						<div class="precio">$ <?php echo number_format($monto,2,",","."); ?></div>
+
+						<div class="precio_pes">UF <?php echo  number_format($monto_final, 2, ',', '.'); ?></div>
 						<?php else: ?>
-							<img class="w-100" src="public/img/casa_out.png">
+						 <div class="precio">$ <?php echo number_format($monto_final,2,",","."); ?></div>
+
+						<?php endif; ?>
+
+						<?php if (isset($this->_publicacion[$i]['fotos'][0]['pequena'])): ?>
+							<img class="w-100"  src="<?php echo BASE_URL.$this->_publicacion[$i]['fotos'][0]['grande']; ?>">
+						<?php else: ?>
+							<img class="w-100" src="<?php echo BASE_URL?>public/img/casa_out.png">
 						<?php endif; ?>
 
 					</div>
@@ -37,13 +61,13 @@
 							
 							<div class="row iconoss">
 								
-								<div class=" col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-car" aria-hidden="false"></i> <?php print_r($this->_publicacion[$i]['cantp']); ?></div>
-								<div class=" col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-bath" aria-hidden="true"></i> <?php print_r($this->_publicacion[$i]['cantb']); ?></div>
-								<div class=" col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-bed" aria-hidden="true"></i> <?php print_r($this->_publicacion[$i]['Canta']); ?></div>
-								<div class=" col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-building" aria-hidden="true"></i> <?php print_r($this->_publicacion[$i]['Canta']); ?></div>
+								<div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-car" aria-hidden="false"></i> <?php print_r($this->_publicacion[$i]['cantp']); ?></div>
+								<div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-bath" aria-hidden="true"></i> <?php print_r($this->_publicacion[$i]['cantb']); ?></div>
+								<div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-bed" aria-hidden="true"></i> <?php print_r($this->_publicacion[$i]['Canta']); ?></div>
+								<div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 desc"><i class="fa fa-building" aria-hidden="true"></i> <?php print_r($this->_publicacion[$i]['Canta']); ?></div>
 								
 							</div>
-							<a href="#" class="btn btn-primary car-btn">Read More</a>
+							<a  class="btn btn-primary propiedad botoon_de_lista car-btn" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'>Detalles</a>
 							
 						</div>
 					</div>
@@ -54,5 +78,5 @@
 		<?php endfor; ?>
 	</div>
 </div>
-</section>
+
 

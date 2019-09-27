@@ -7,10 +7,13 @@ var mapdivv = document.getElementById("map");
 		parallelUploads: 7,
 		uploadMultiple: true
 	});
-/* mapa de google
-function localizacion(){
+// mapa de google
+function localizacion(posicion){
 	//console.log(posicion);	
-	var coord ={lat:10.4311864 ,lng: -64.1543756};
+	var latitude= posicion.coords.latitude;//latitup 
+  var longitude= posicion.coords.longitude;//longitud 
+  console.log("latutud"+latitude+"/br"+"longitude:"+longitude);
+  var coord ={lat:latitude ,lng: longitude};
 	var map = new google.maps.Map(mapdivv,{
 		zoom: 15,
 		center: coord,
@@ -23,8 +26,9 @@ function localizacion(){
 
 	});
 }
-localizacion();
-/ fin de map*/
+//localizacion();
+navigator.geolocation.getCurrentPosition(localizacion);
+// fin de map
 
 // carga de archivos
 $('#titulo').on('focus',function(){
@@ -41,7 +45,7 @@ $('#btn_enviar').click(function() {
 	var id=$(this).data('id');
 
 	if ($("#titulo").val()=="") {
-		console.log('titulo vacio');		
+				
 		$("#titulo").css('border-color','#ff000075');
     	$("#titulo").css('box-shadow','rgba(255, 0, 0, 0.25) 0px 0px 0px 0.2rem');
     	$('html, body').animate({scrollTop:0}, 'slow');
@@ -50,7 +54,7 @@ $('#btn_enviar').click(function() {
 		return;
 	}
 	if ($("#Precio").val()=="") {
-		console.log('precio vacio');
+
 		$("#Precio").css('border-color','#ff000075');
     	$("#Precio").css('box-shadow','rgba(255, 0, 0, 0.25) 0px 0px 0px 0.2rem');
     	$('html, body').animate({scrollTop:0}, 'slow');
@@ -85,7 +89,8 @@ $('#btn_enviar').click(function() {
 	 
     myDropzone.processQueue();
     myDropzone.on('success', function(){
-    	//window.location.href=base_url+'listar';
+      $(".loader").fadeIn("slow");
+    window.location.href=base_url+'listar/index/'+$("#email-usuario").val();
     });
 });
 
@@ -106,24 +111,13 @@ function enviar_solo_datos(id=false,bn=false){
     	'cantb':$('#cantb').val(),
     	'Canta':$('#Canta').val(),
     	'descrip':$('#descrip').val()
-	},function(data){
-		window.location.href=base_url+'listar';
-	},'json');
+	},function(){
+    $(".loader").fadeIn("slow");
+    window.location.href=base_url+'listar/index/'+$("#email-usuario").val();
+	});
 }
 //fin de carga
 //taps del formulario
-function tapss(divtaps,elementos) {
-	elementos.forEach(function (elemento, indice, array) {
-	$("#pes").prepend("<div class='col legna-taps' data-afect='"+elemento.data+"'>"+elemento.taps+"<div>");
-	});
-
-	$(".legna-taps").on('click',function(){
-		console.log(this.dataset.afect);
-		$('.efectt').removeClass('active-efectt');
-		$('#'+this.dataset.afect).addClass('active-efectt');
-	});
-}
-
 var opciones= [
 	{taps:'Foto',url:'hola2',data:'tres'},
 	{taps:'Ubicacion',url:'hola2',data:'dos'},
@@ -160,7 +154,7 @@ $('#provincia').on('change',function(){
 
 $('#btn_actualiza').click(function() {
 	if ($("#titulo").val()=="") {
-		console.log('titulo vacio');		
+				
 		$("#titulo").css('border-color','#ff000075');
     	$("#titulo").css('box-shadow','rgba(255, 0, 0, 0.25) 0px 0px 0px 0.2rem');
     	$('html, body').animate({scrollTop:0}, 'slow');
@@ -169,7 +163,7 @@ $('#btn_actualiza').click(function() {
 		return;
 	}
 	if ($("#Precio").val()=="") {
-		console.log('precio vacio');
+		
 		$("#Precio").css('border-color','#ff000075');
     	$("#Precio").css('box-shadow','rgba(255, 0, 0, 0.25) 0px 0px 0px 0.2rem');
     	$('html, body').animate({scrollTop:0}, 'slow');
@@ -239,3 +233,55 @@ $('#btn_actualiza').click(function() {
 		    }
 		});
 	});
+
+ 
+  $('#Precio').on('blur',function(){
+    
+  
+    $.getJSON('https://mindicador.cl/api', function(data) {
+    var dailyIndicators = data;
+    
+    var uf=parseFloat(dailyIndicators.uf.valor);
+
+    var pesos=$('#Precio').val();
+
+
+      pesos=pesos.toString();
+pesos=pesos.replace(/\./g,"");
+ pesos=pesos.replace(/\,/g,".");
+  console.error(uf);
+  console.error(pesos);
+
+var total = (parseFloat(pesos)*(parseFloat(uf)));
+console.error(total);
+
+
+             var tempInput = $(document.createElement("input"));
+             tempInput.val(parseFloat(total).toFixed(2));
+             tempInput.mask('000.000.000,00', { reverse: true });
+             var mascara = tempInput.val();
+    $('#Precio_peso').val('$ '+mascara);
+
+
+    });
+
+});
+
+
+  $('#contrato').on('change',function(){
+
+precio();
+$('#Precio').blur();
+});
+precio();
+
+function precio(){
+
+    if ($('#contrato').val()=='Arriendo') {
+      $("#label").html('precio en $<font class="obligatorio">*</font>');
+      $("#Precio_peso").fadeOut(2000);
+    }else{
+      $("#label").html('Precio en U.F. <font class="obligatorio">*</font>');
+      $("#Precio_peso").fadeIn(2000);
+    }
+  }

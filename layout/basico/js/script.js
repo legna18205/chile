@@ -5,6 +5,17 @@
 	    $(".loader").fadeOut("slow");
 	});
 
+	var opciones= [
+	{taps:'Ubicacion',url:'ubi',data:'ubi'},
+	{taps:'Datos',url:'datos',data:'datos'}
+	
+]
+
+	var pestaña = new tapss($('#pes_1'),opciones);
+
+
+
+
 	// Global variables
 	var userAgent = navigator.userAgent.toLowerCase(),
 			initialDate = new Date(),
@@ -1269,7 +1280,7 @@
 	});
 
 
-
+	
 
 
 }());

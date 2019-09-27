@@ -6,12 +6,14 @@ class errorController extends Controller
         parent::__construct();
     }
     
-    public function index()
+    public function index($cod=false)
     {
         $this->_view->titulo = 'Error';
-        $this->_view->mensaje = $this->_getError();
+        $this->_view->mensaje = $this->_getError($cod);
+        $this->_view->setCss(array('css'));
         $this->_view->renderizar('index');
     }
+
     
     public function access($codigo)
     {
@@ -22,18 +24,19 @@ class errorController extends Controller
     
     private function _getError($codigo = false)
     {
-        if($codigo){
-            $codigo = $this->filtrarInt($codigo);
-            if(is_int($codigo))
-                $codigo = $codigo;
+        if(!$codigo){
+             $codigo = 'default';
         }
         else{
-            $codigo = 'default';
+           
         }        
         
         $error['default'] = 'Ha ocurrido un error y la página no puede mostrarse';
         $error['5050'] = 'Acceso restringido!';
         $error['8080'] = 'Tiempo de la sesion agotado';
+        $error['1234'] = 'disculpe. este usuario no existe';
+        $error['963'] = 'disculpe. esta publicacion no existe';
+        $error['964'] = 'disculpe. usted no posee los permisos para modificar esta publicacion';
         
         if(array_key_exists($codigo, $error)){
             return $error[$codigo];

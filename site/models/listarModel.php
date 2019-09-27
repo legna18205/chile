@@ -4,9 +4,19 @@ class listarModel extends Model{
         parent::__construct();
     }
 
-    public function mis_publicaciones(){
+    public function mis_publicaciones($usuarioo){
+
+
+        $id = $this->_db->query(
+                    "select id_usuario from usuario where email = '$usuarioo'"
+        ); 
+
+        $id = $id->fetch();
+
+        $id=$id[0];
+
         $usuario = $this->_db->query(
-                    "select * from propiedad where id_usuario = '".session::get('id_usuario')."'"
+                    "SELECT * from propiedad where id_usuario = '$id' and activo=1"
         );                    
         $pub = $usuario->fetchall();
             for ($i=0; $i < count($pub) ; $i++) { 
@@ -17,9 +27,18 @@ class listarModel extends Model{
             }
         return $pub;
     }
+    public function verificarEmail($email){
+        $id_usuario = $this->_db->query(
+                "select id_usuario from usuario where email = '$email'"
+        );        
+        if($id_usuario->fetch()){
+            return true;
+        }        
+        return false;
+    }
 
     public function eliminarpublicacion($id){
-        $sql="DELETE FROM propiedad WHERE id_propiedad=$id";
+        $sql="UPDATE propiedad SET activo=0  WHERE id_propiedad=$id";
         $resultado = $this->_db->query($sql);
         if(!$resultado){
             return 0;

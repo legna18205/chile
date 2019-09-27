@@ -1,12 +1,21 @@
 $(document).ready(function(){
 
-
+ 
 
 	$('.propiedad').on('click',function(){
+		$(".loader").fadeIn("slow");
 		var id=$(this).data('id');
 		var posicion=$(this).data('posicion');
 		console.log(posicion);
-		traer_propiedad(id,posicion);
+		console.error($(window).width());
+		if ($(window).width()<768) {
+			//alert(id);
+			window.location.href = base_url+"propiedad/index/"+id;
+
+		}else{
+			traer_propiedad(id,posicion);
+		}
+		
 	});
 
 	$(".cerrar_modal").on('click',function(){
@@ -25,6 +34,7 @@ $(document).ready(function(){
 		$.post(base_url+'propiedad/traer_propiedades',{
 			'id':id
 		},function(data){
+			$(".loader").fadeOut("slow");
 			console.log(data[0].fotos);
 			if(data){
 				$("#modal_titulo_propiedad").html('');
@@ -34,7 +44,7 @@ $(document).ready(function(){
 				var html='';
 				for (var i = 0; i < data[0].fotos.length; i++) {
 					html+='<li data-thumb="'+data[0].fotos[i].grande+'">';
-					html+='<img src="'+base_url+data[0].fotos[i].grande+'"/></li>';
+					html+='<img style="width: 100%;" src="'+base_url+data[0].fotos[i].grande+'"/></li>';
 				}
 				$("#lightSlider").html(html);
 				galeria= $('#lightSlider').lightSlider({
@@ -56,7 +66,7 @@ $(document).ready(function(){
 				html+='<li> cantp: '+data[0].cantp+'</li>';
 				html+='<li> cantb: '+data[0].cantb+'</li>';
 				html+='<li> Canta: '+data[0].Canta+'</li>';
-				$("#modal_detalles_propiedad").html(html);
+				$("#datos").html(html);
 				$("#modal_id_propiedad").val(data[0].id_propiedad);
 				$('#exampleModal').modal('show');
 			}else{

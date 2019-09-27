@@ -11,15 +11,12 @@ class cambiarController extends Controller
     }
     
    
-   public function index()
-    {
-
+   public function index(){
         $this->_view->usu = Session::get('usuario');   
         $this->_view->titulo = 'Cambiar contraseña';
-        $this->_view->setJs(array('cambiar'));
-        
-       $this->_view->renderizar('index', 'cambiar');
-
+        //$this->_view->setJs(array('cambiar'));        
+        $this->_view->setCss(array('css'));
+        $this->_view->renderizar('cambiar', 'cambiar');
     }
 
    /* public function cambiar(){

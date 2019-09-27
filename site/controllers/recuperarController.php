@@ -29,16 +29,9 @@ class recuperarController extends Controller
     }
 
     public function cambiar(){
-       
-		 
           $this->_view->titulo = 'Cambiar Contraseña';
          $this->_view->setJs(array('recuperar'));
-
-		 
-		
-        
-
-       
+        $this->_view->setCss(array('css'));
          $this->_view->renderizar('cambiar');
    
     } 

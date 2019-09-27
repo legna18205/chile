@@ -6,6 +6,9 @@ class View
     private $_js;
     private $_css;
     public $menu;
+    public $uf;
+
+
     
     public function __construct(Request $peticion) {
         $this->_controlador = $peticion->getControlador();
@@ -13,6 +16,25 @@ class View
         $this->_css = array();
         $this->_metodos = $peticion->getMetodo();
         $this->_args = $peticion->getArgs();
+
+$apiUrl = 'https://mindicador.cl/api';
+//Es necesario tener habilitada la directiva allow_url_fopen para usar file_get_contents
+if ( ini_get('allow_url_fopen') ) {
+    $json = file_get_contents($apiUrl);
+} else {
+    //De otra forma utilizamos cURL
+    $curl = curl_init($apiUrl);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $json = curl_exec($curl);
+    curl_close($curl);
+}
+ 
+$this->indicadores= json_decode($json);
+$this->uf=$this->indicadores->uf->valor;
+
+
+
+
     }
     
     public function renderizar($vista)

@@ -22,12 +22,12 @@ class propiedadModel extends Model{
         return $datos->fetchall();
     }
     function guardar2($datos){
-        $sql ="INSERT into propiedad values('','".session::get('id_usuario')."',CURDATE(),'".$datos['region']."','".$datos['provincia']."','".$datos['comuna']."','".$datos['direccion']."','".$datos['referencia']."','".$datos['titulo']."','".$datos['Precio']."','".$datos['contrato']."','".$datos['espacio']."','".$datos['cantp']."','".$datos['cantb']."','".$datos['Canta']."','".$datos['descrip']."')";
+        $sql ="INSERT into propiedad values('','".session::get('id_usuario')."',CURDATE(),'".$datos['region']."','".$datos['provincia']."','".$datos['comuna']."','".$datos['direccion']."','".$datos['referencia']."','".$datos['titulo']."','".$datos['Precio']."','".$datos['contrato']."','".$datos['espacio']."','".$datos['cantp']."','".$datos['cantb']."','".$datos['Canta']."','".$datos['descrip']."','','',0,'1')";
         $datos = $this->_db->query($sql);
     }
     function guardar($datos,$fotos){
 
-        $sql ="INSERT into propiedad values('','".session::get('id_usuario')."',CURDATE(),'".$datos['region']."','".$datos['provincia']."','".$datos['comuna']."','".$datos['direccion']."','".$datos['referencia']."','".$datos['titulo']."','".$datos['Precio']."','".$datos['contrato']."','".$datos['espacio']."','".$datos['cantp']."','".$datos['cantb']."','".$datos['Canta']."','".$datos['descrip']."')";
+        $sql ="INSERT into propiedad values('','".session::get('id_usuario')."',CURDATE(),'".$datos['region']."','".$datos['provincia']."','".$datos['comuna']."','".$datos['direccion']."','".$datos['referencia']."','".$datos['titulo']."','".$datos['Precio']."','".$datos['contrato']."','".$datos['espacio']."','".$datos['cantp']."','".$datos['cantb']."','".$datos['Canta']."','".$datos['descrip']."','','',0,'1')";
        	$this->_db->query($sql);
     	$id=$this->_db->lastInsertId();
     	for ($i=0; $i < count($fotos['grande']) ; $i++) { 
@@ -76,6 +76,9 @@ class propiedadModel extends Model{
         $this->_db->query($sql);
     }
     function datos_propiedad($id){
+        $sql ="UPDATE propiedad set visitas = (propiedad.visitas + 1) where id_propiedad ='$id' ";
+        $this->_db->query($sql);
+
         $sql ="SELECT * from propiedad where id_propiedad ='$id'";
         $datos = $this->_db->query($sql);
         return $datos->fetch();
@@ -88,6 +91,8 @@ class propiedadModel extends Model{
         return $datos->fetchall();
     }
     public function traer_propiedades($id){
+        $sql ="UPDATE propiedad set visitas = (propiedad.visitas + 1) where id_propiedad ='$id' ";
+        $this->_db->query($sql);
         $usuario = $this->_db->query(
                     "SELECT * from propiedad where id_propiedad = '$id'"
         );                    

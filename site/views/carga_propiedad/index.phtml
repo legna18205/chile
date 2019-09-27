@@ -1,9 +1,9 @@
-<section class="section section-md">
+
 	<div class="container top-carga">
 		<div class="row">
-			<div class="col-2">
+			<div class="col-2 col-md-2 .d-none .d-sm-block"> 
 			</div>
-			<div class="col">				
+			<div class="col-12 col-sm-12 col-md-8">
 				<div class="row">
 					<div class="col-12 titulo-formulario tituloo  font-weight-bold wow-outer linea">
 							Publicar
@@ -17,41 +17,33 @@
 						<div class="form-group row">
 						  <label for="example-text-input" class="col-3 col-form-label">Titulo <font class="obligatorio">*</font></label>
 						  <div class="col">
-						    <input class="form-control" type="text" value="<?php echo $retVal = ($this->bn==1) ? $this->datos['titulo'] : '' ; ?>" id="titulo"  autofocus="true" required>
+						    <input class="form-control " type="text" value="<?php echo $retVal = ($this->bn==1) ? $this->datos['titulo'] : '' ; ?>" id="titulo"  autofocus="true" required>
 						  </div>
 						</div>
-							<div class="form-group row">
-							  <label for="example-search-input" class="col-3 col-form-label">Precio <font class="obligatorio">*</font></label>
+													<div class="form-group row">
+							  <label for="example-search-input" class="col-3 col-form-label">Contrato <font class="obligatorio">*</font></label>
 							  <div class="col">
-							    <input class="form-control" type="nunber"  value="<?php echo $retVal = ($this->bn==1) ? $this->datos['Precio'] : '' ; ?>" id="Precio" required>
+							  	
+								
+										<select class="form-control" type="text"  id="contrato">
+							    			
+							    			<option value="Venta" <?php echo $retVal = (isset($this->datos['contrato']) && $this->datos['contrato']=='Venta') ? 'selected="selected"' : '' ; ?>>Venta</option>
+							    			<option value="Arriendo" <?php echo $retVal = (isset($this->datos['contrato']) && $this->datos['contrato']=='Arriendo') ? 'selected="selected"' : '' ; ?>>Arriendo</option>
+							    		</select>
+									
+								
 							  </div>
 							</div>
 							<div class="form-group row">
-							  <label for="example-search-input" class="col-3 col-form-label">Contrato</label>
+							  <label id="label" for="example-search-input" class="col-3 col-form-label">Precio en U.F. <font class="obligatorio">*</font></label>
 							  <div class="col">
-							  	<?php if ($this->bn==1): ?>
-									<?php 	if ($this->datos['contrato']=='Venta'): ?>
-										<select class="form-control" type="text"  id="contrato">
-							    			<option value="">--Seleccione--</option>
-							    			<option value="Venta" selected="selected">Venta</option>
-							    			<option value="Arriendo">Arriendo</option>
-							    		</select>
-									<?php elseif ($this->datos['contrato']=='Arriendo'): ?>
-										<select class="form-control" type="text"  id="contrato">
-							    			<option value="">--Seleccione--</option>
-							    			<option value="Venta">Venta</option>
-							    			<option value="Arriendo" selected="selected">Arriendo</option>
-							    		</select>
-									<?php endif; ?>
-								<?php else:	?>							
-							    <select class="form-control" type="text"  id="contrato">
-							    	<option value="">--Seleccione--</option>
-							    	<option value="Venta">Venta</option>
-							    	<option value="Arriendo">Arriendo</option>
-							    </select>
-								<?php endif; ?>
+							    <input class="form-control" type="text"  value="<?php echo $retVal = ($this->bn==1) ? $this->datos['Precio'] : '' ; ?>" id="Precio" data-mask="000.000.000.000.000,00" data-mask-reverse="true" required>
+							  </div>
+							  <div class="col">
+							    <input class="form-control" type="text"  value="" id="Precio_peso" data-mask="000.000.000.000.000,00" data-mask-reverse="true" disabled="disabled">
 							  </div>
 							</div>
+
 							<div class="form-group row">
 							  <label for="example-search-input" class="col-3 col-form-label">Espacio</label>
 							  <div class="col">
@@ -85,8 +77,8 @@
 							  <label  class="col-3 col-form-label">Descripcion</label>
 							  <div class="col">
 							    <textarea class="form-control" type="text"  value="" id="descrip">
-									<?php echo $retVal = ($this->bn==1) ? $this->datos['descrip'] : '' ; ?>
-							    </textarea>
+							    	<?php echo $retVal = ($this->bn==1) ? $this->datos['descrip'] : '' ; ?>
+							    	</textarea>
 							  </div>
 							</div>
 							
@@ -173,10 +165,8 @@
           					    </div>
           					  </a></center>
           		</div>
-        
-
 			</div>
-			<div class="col-2">
+			<div class="col-2 col-md-2 .d-none .d-sm-block">
 				
 		
 				
@@ -189,4 +179,4 @@
 								
 		</div>
 	</div>
-</section>
+

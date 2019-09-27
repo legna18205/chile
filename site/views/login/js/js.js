@@ -76,7 +76,7 @@ function getFbUserData(){
     });
   };
 
- /* function attachSignin(element) {  
+  function attachSignin(element) {  
     auth2.attachClickHandler(element, {},
         function(googleUser) {
            var profile = googleUser.getBasicProfile(); 
@@ -115,7 +115,7 @@ function getFbUserData(){
          // alert(JSON.stringify(error, undefined, 2));
         });
   }
-  startApp();*/
+  startApp();
 
 $( "#enviar" ).click(function() {
   $( "#form-login" ).submit();

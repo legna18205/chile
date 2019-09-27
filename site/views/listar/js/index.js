@@ -4,10 +4,12 @@ $(document).ready(function(){
 		var id=$(this).data('id');
 		alertify.confirm("¿Seguro de eliminar esta publicacion?", function (e) {
 		    if (e) {
+             $(".loader").fadeIn("slow");
 		         $.post(base_url+'listar/eliminarpublicacion',
   				  {
   				    id: id
   				  },function(e){
+              $(".loader").fadeOut("slow");
   				    if (e==0) {
   				      	alertify.error("Error al eliminar publicacion");
   				    }else{
@@ -34,6 +36,7 @@ $(document).ready(function(){
 		});
 	});
 		$('.lapiz').on('click',function(){
+      $(".loader").fadeIn("slow");
 		var id=$(this).data('id');
 		window.location.href=base_url+'carga_propiedad/index/'+id;
 	});

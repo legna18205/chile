@@ -1,0 +1,42 @@
+.pes {
+	/*width: 100%;*/
+	min-height: 300px;
+	background-color: #00f0;
+	border: 1px solid #aaa;
+	border-radius: 2px;
+	box-shadow: 1px 1px 1px 1px #aaa;
+	padding: 18px;
+}
+.legna-taps {
+	height: 40px;
+	text-align: center;
+	color: black;
+	border: solid 1px #acacac;
+	cursor: pointer;
+	border-radius: 2px;
+	vertical-align: middle;
+	padding: 5px;
+}
+.legna-taps:hover {
+	height: 40px;
+	text-align: center;
+	color: #fff;
+	border: solid 1px #007bff;
+	cursor: pointer;
+	border-radius: 2px;
+	vertical-align: middle;
+	padding: 5px;
+	background: #007bff;
+}
+.efectt{
+
+
+width: 95%;
+min-height: 100%;
+margin-top:40px; 
+display: none;
+}
+.active-efectt{
+
+display: block;
+}
