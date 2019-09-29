@@ -43,6 +43,52 @@
 	border: solid 1px;
 	border-color: #f000;
 }
+.ojo {
+	position: absolute;
+	background: #97000000;
+	width: 51px;
+	padding-top: 3px;
+	height: 26px;
+	text-align: left;
+	/* vertical-align: middle; */
+	right: 54px;
+	top: 3px;
+	z-index: 5;
+	color: #575bff;
+	line-height: 11px;
+	border-radius: 2px;
+	cursor: pointer;
+	font-style: unset;
+	font-weight: bold;
+	font-size: 17px;
+	transition-property: border;
+	transition-duration: 0.8s;
+	/* border: solid 1px; */
+	border-color: #060606;
+}
+.ojo:hover {
+	position: absolute;
+	background: #97000000;
+	width: 51px;
+	padding-top: 3px;
+	height: 26px;
+	text-align: left;
+	/* vertical-align: middle; */
+	right: 54px;
+	top: 3px;
+	z-index: 5;
+	color: #0e12ca;
+	line-height: 11px;
+	border-radius: 2px;
+	cursor: pointer;
+	font-style: unset;
+	font-weight: bold;
+	font-size: 17px;
+	transition-property: border;
+	transition-duration: 0.8s;
+	/* border: solid 1px; */
+	border-color: #060606;
+}
 .lapiz {
 	position: absolute;
 	background: #97000000;
@@ -163,3 +209,35 @@
 	color: #db192d;
 	padding: 3px;
 }
+
+
+
+/*---------------------------------------------media----------------------------------------------------*/
+
+@media only screen and  (min-width: 1201px) {  
+
+
+
+} 
+
+@media only screen and (max-width: 1200px) and (min-width: 992px) {  
+
+
+
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {  
+
+
+
+} 
+@media only screen and (max-width: 767px) and (min-width: 576px) {  
+
+
+
+}
+
+@media only screen and (max-width: 575px)  {  
+
+
+} 

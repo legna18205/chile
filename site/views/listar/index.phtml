@@ -14,7 +14,7 @@
 							 
 					</div>
 		<?php for ($i=0; $i < count($this->_publicacion) ; $i++): ?>
-
+ 
 			<div class="card" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'>
 
 				<div class="row ">
@@ -24,6 +24,8 @@
 					<div class="x" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'>x</div>
 					<div class="lapiz" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'><i class="fa fa-pencil" aria-hidden="true"></i>
 </div>
+<div class="ojo"><i class="fa fa-eye" aria-hidden="true"><?php echo $this->_publicacion[$i]['visitas']; ?></i>
+</div>
 					<?php endif; ?>
 					<div class="col-md-4 propiedad" data-id='<?php echo $this->_publicacion[$i]['id_propiedad']; ?>'>
 
@@ -32,7 +34,7 @@
 						<?php  $monto_final= $monto; ?>
 						<?php   settype($monto,"double"); ?>
 						<?php  $monto= $monto * $this->uf ; ?>
-
+						
 
 						<?php if ($this->_publicacion[$i]['contrato']=='Venta'):?>
 						<div class="precio">$ <?php echo number_format($monto,2,",","."); ?></div>

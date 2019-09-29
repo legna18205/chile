@@ -35,10 +35,10 @@
     <link href="<?php echo $_layoutParams['ruta_css']; ?>font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>nav.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $_layoutParams['ruta_css']; ?>taps.css" rel="stylesheet" type="text/css" />
-
- <link href="<?php echo BASE_URL; ?>public/css/dropzone.css" rel="stylesheet" type="text/css" />
- <link href="<?php echo BASE_URL; ?>public/css/alertify.bootstrap.css" rel="stylesheet" type="text/css" />
- <link href="<?php echo BASE_URL; ?>public/css/alertify.core.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $_layoutParams['ruta_css']; ?>seccion-centro.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo BASE_URL; ?>public/css/dropzone.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo BASE_URL; ?>public/css/alertify.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo BASE_URL; ?>public/css/alertify.core.css" rel="stylesheet" type="text/css" />
     <!-- CSS de la vista, se cargan de manera dinamica los archivos css que tenga la vista definida en su carpeta css y es llamado en el contralador de cada vista..  -->
     <?php if(isset($_layoutParams['css']) && count($_layoutParams['css'])): ?>
         <?php for($i=0; $i < count($_layoutParams['css']); $i++): ?>
@@ -49,15 +49,6 @@
 
 <body id="page-top">
 <div class="loader"></div>
-<!--    <div class="preloader">
-      <div class="preloader-logo"><img src="<?php echo BASE_URL?>public/img/peque.jpg" alt="" width="151" height="44" srcset="images/logo-default-151x44.png 2x"/>
-      </div>
-      <div class="preloader-body">
-        <div id="loadingProgressG">
-          <div class="loadingProgressG" id="loadingProgressG_1"></div>
-        </div>
-      </div>
-    </div> -->
 
 <div class="page">
   <?php if (session::get('autenticado') && $this->_controlador != 'carga_propiedad' ): ?>
@@ -67,80 +58,66 @@
       </div>
       </a>
   <?php endif; ?>
-         <!-- Page Header template de tico   
-        AIzaSyAuC3tFNMyjX1MM7lOfxN3F05IxytI8HMw
-        -->
-      <header class="section novi-background page-header">
-        <!-- RD Navbar-->
-        <div class="rd-navbar-wrap">
-          <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-lg-stick-up="true" data-lg-stick-up-offset="118px" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xl-stick-up="true" data-xl-stick-up-offset="118px" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-xxl-stick-up-offset="118px" data-xxl-stick-up="true">
-          <div class="rd-navbar-aside-outer">
-            <div class="row">
-              <div class="boton-navegacion">
-                  <!-- RD Navbar Toggle -->
-                  <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-              </div>
-               <div class="logo-navegacion-peq">
-                  <img class="logoo" src="<?php echo BASE_URL?>public/img/logos/prop2.png" alt="" width="" height=""/>
-              </div>
-            </div>
-          </div> 
-            <div class="rd-navbar-main-outer">
-              <div class="rd-navbar-main">
-                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
-                  <!-- RD Navbar Nav-->
-                  <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item cont-logo"><a class="rd-nav-link" href="<?php echo BASE_URL ?>"><img class="logoo" class="img-fluid" alt="Responsive image" src="<?php echo BASE_URL?>public/img/logos/prop2.png" alt="" width="" height=""/></a>
-                    </li>
-                    <?php if (session::get('autenticado')): ?>
-                      
-                      <li class="rd-nav-item "><a class="rd-nav-link" href="<?php echo BASE_URL.'listar/index/'.Session::get('email'); ?>">Mis publicaciones</a>
-                    </li>
-                    <?php endif; ?>
-                   <!--  <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
-                    </li> -->
 
-                    <li class="rd-nav-item boton-usuario-login">
-
-                      <?php if (session::get('autenticado')): ?>                
-                      <div class="dropdown">
-                        <button class="rd-nav-link dropdown-toggle btn-usuario" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <div id="avatar-mini" style="background-image: url(<?php  echo BASE_URL.session::get('foto'); ?>); background-size: contain;"></div>
-                          <input type="text" hidden id="email-usuario" value="<?php echo session::get('email'); ?>">
-                          <?php echo session::get('email'); ?>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="<?php echo BASE_URL; ?>recuperar/cambiar">Cambiar Contraseña</a>
-                          <a class="dropdown-item" href="<?php echo BASE_URL; ?>perfil/" >Perfil</a>
-                          <a class="dropdown-item" href="<?php echo BASE_URL; ?>login/cerrar">Cerrar Sesión</a>
-                        </div>
-                      </div>
-                      <?php else: ?>
-
-                        <li class="rd-nav-item boton-usuario-login-no-login"><a class="rd-nav-link" href=<?php echo BASE_URL ?>login><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesion</a>
-                        </li>
-
-
-
-                      <?php endif; ?>
-                    </li>
-                    <li class="rd-nav-item boton-usuario-login white">
-                      <?php echo "UF: ".number_format($this->uf,2,",",".") ?>
-                    </li>
-                  </ul>
+ 
+      <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                 <div class="mx-auto order-0">
+                    <a class="navbar-brand " href="<?php echo BASE_URL; ?>">
+                      <img   src="<?php echo BASE_URL?>public/img/logos/prop2.png" alt="" width="150" height="auto"/>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </div>
-              </div>
-            </div>
 
-          </nav>
-        </div>
+                <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                    <ul class="navbar-nav mr-auto">
+                        
+                         <?php if (session::get('autenticado')): ?>
+                                  
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="<?php echo BASE_URL.'listar/index/'.Session::get('email'); ?>">Mis publicaciones
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                    </ul>
+                </div>
+               
+                <div class="navbar-collapse collapse w-100 order-0 dual-collapse2">
+                   <span class="navbar-text ">
+                      <?php echo "UF: ".number_format($this->uf,2,",",".") ?>
+                      
+                    </span>
+                    <ul class="navbar-nav ml-auto ">
+
+                        <?php if (session::get('autenticado')): ?>
+                          <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div id="avatar-mini" style="background-image: url(<?php  echo BASE_URL.session::get('foto'); ?>); background-size: contain;"></div>
+                                    <?php echo session::get('email'); ?>
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?php echo BASE_URL; ?>perfil/" >Perfil</a>
+                                    <a class="dropdown-item" href="<?php echo BASE_URL; ?>recuperar/cambiar">Cambiar Contraseña</a>
+                                    
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="<?php echo BASE_URL; ?>login/cerrar">Cerrar Sesión</a>
+                                  </div>
+                          </li>
+                        <?php else: ?>
+                          <li class="nav-item">
+                            <a class="nav-link" href="<?php echo BASE_URL ?>login"><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesion</a>
+                          </li>
+
+                        <?php endif; ?>
+
+                    </ul>
+                </div>
+            </nav>
       </header>
       <section class="section section-md">
-
+ <input type="text" hidden id="email-usuario" value="<?php echo session::get('email'); ?>">
  <!-- Page Header fin template de tico   
 AIzaSyAuC3tFNMyjX1MM7lOfxN3F05IxytI8HMw
 -->

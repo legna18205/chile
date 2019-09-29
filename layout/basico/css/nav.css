@@ -1,4 +1,12 @@
 /* Para 960px */  
+.dropdown-menu {
+	background-color: #343a40;
+	box-shadow: 1px 1px 5px 3px #343a40;
+}
+.dropdown-item {
+	color: #fff;
+}
+
 @media only screen and (min-width: 981px) {  
 .cont-logo {
 	width: 20%;
@@ -221,13 +229,8 @@ html.rd-navbar-fixed-linked .page {
 	border: 0px;
 	font-family: "Montserrat", monospace;
 }
-.dropdown-menu {
-	background-color: #fff;
-	box-shadow: 1px 1px 5px 3px #233354;
-}
-.dropdown-item {
-	color: #233354;
-}
+
+
 .dropdown-item:hover, .dropdown-item:focus {
 	color: #c8114d;
 	background-color: transparent;
