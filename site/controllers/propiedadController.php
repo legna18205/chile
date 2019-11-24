@@ -24,6 +24,7 @@ class propiedadController extends Controller{
       //$this->_view->setJs(array('js','validate'));
       $this->_view->setJs(array('index'));
       $this->_view->setCss(array('index'));
+      
       $this->_view->renderizar('index');
     }
     

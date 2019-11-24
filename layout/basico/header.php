@@ -61,8 +61,8 @@
 
  
       <header>
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-                 <div class="mx-auto order-0">
+            <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+                 <div class="mx-auto order-0 ">
                     <a class="navbar-brand " href="<?php echo BASE_URL; ?>">
                       <img   src="<?php echo BASE_URL?>public/img/logos/prop2.png" alt="" width="150" height="auto"/>
                     </a>
@@ -85,7 +85,7 @@
                 </div>
                
                 <div class="navbar-collapse collapse w-100 order-0 dual-collapse2">
-                   <span class="navbar-text ">
+                   <span class="navbar-text order-sm-first">
                       <?php echo "UF: ".number_format($this->uf,2,",",".") ?>
                       
                     </span>
