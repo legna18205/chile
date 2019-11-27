@@ -89,7 +89,7 @@ class loginController extends Controller{
 
 
 
-            echo json_encode($row);
+            
             Session::set('autenticado', true);
             Session::set('role', $row['id_role']);
             Session::set('email', $row['email']);
@@ -97,6 +97,7 @@ class loginController extends Controller{
             Session::set('foto', $row['foto']);
             Session::set('id_usuario', $row['id_usuario']);
             Session::set('tiempo', time());
+            echo json_encode($row);
     }
     
 
@@ -114,14 +115,14 @@ class loginController extends Controller{
             $mail->SMTPDebug  = 1;                   
             $mail->SMTPAuth   = true; 
             $mail->SMTPSecure = "tls";               
-            $mail->Host       = "smtp.gmail.com";
+            $mail->Host       = "mail.propiedadesya.com";
             //datos del servidor de email
-            $mail->Username   = "prccnoreply@gmail.com";       
-            $mail->Password   = "20574205";        
-            $mail->SetFrom('prccnoreply@gmail.com');
-            $mail->AddReplyTo("prccnoreply@gmail.com","prcc");
+            $mail->Username   = "propiedadesya@propiedadesya.com";       
+            $mail->Password   = "Xsg162**";        
+            $mail->SetFrom('propiedadesya@propiedadesya.com');
+            //$mail->AddReplyTo("prccnoreply@gmail.com","prcc");
             //asunto    
-            $mail->Subject = 'Recuperacion de cuenta de usuario';
+            $mail->Subject = 'aviso propiedadesya';
             //mensaje
             $mail->Body = 'Hola ' . $nombre . ',' .
                             ' Se le ha creado una cuenta en PropiedadesYa como '.$login.' por medio de '.$tipo.' su clave ' .

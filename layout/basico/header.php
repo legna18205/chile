@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- etiqueta meta con el id de google para la utilizacion de el api de logueo-->
-    <meta name="google-signin-client_id" content="550716738087-s3vhb8tj13t9ikus03s60co75agbgjj4.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="07149057937-gssqbtuqc464mbsdvqc1a6bs32958nir.apps.googleusercontent.com">
     <!-- <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL?>public/img/glipicon.jpg" /> -->
    
     <title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>

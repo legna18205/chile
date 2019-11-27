@@ -67,7 +67,10 @@ function getFbUserData(){
     gapi.load('auth2', function(){
       // Retrieve the singleton for the GoogleAuth library and set up the client.
       auth2 = gapi.auth2.init({
-        client_id: '550716738087-s3vhb8tj13t9ikus03s60co75agbgjj4.apps.googleusercontent.com',
+
+
+
+        client_id: '407149057937-gssqbtuqc464mbsdvqc1a6bs32958nir.apps.googleusercontent.com',
         cookiepolicy: 'single_host_origin',
         // Request scopes in addition to 'profile' and 'email'
         //scope: 'additional_scope'
@@ -82,15 +85,17 @@ function getFbUserData(){
            var profile = googleUser.getBasicProfile(); 
            var id_token = googleUser.getAuthResponse().id_token;     
            var xhr = new XMLHttpRequest();
-           xhr.open('POST', 'https://localhost.com/tokensignin');
+           xhr.open('POST', 'https://www.propiedadesya.com/tokensignin');
            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
            xhr.onload = function() {};
            xhr.send('idtoken=' + id_token);
+           console.log(profile.getName());
               $.post(base_url+'login/login_google',{
                 nombre: profile.getName(),
                 foto: profile.getImageUrl(),
                 email: profile.getEmail()
               }, function(data) {
+                console.log('hola');
                   var html='';                            
                     html+="<div class='dropdown'>";
                     html+="<button class='rd-nav-link dropdown-toggle btn-usuario' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>";
@@ -109,7 +114,7 @@ function getFbUserData(){
                 $('#avatar-mini').css('background-image', 'url("'+data.foto+'")');
                 $('#avatar-mini').css('background-size', 'contain');
                 $(location).attr('href',base_url);
-              },"json");
+              },'json');
         }, function(error) {
           $('#error-login').html('error de logueo con google');
          // alert(JSON.stringify(error, undefined, 2));

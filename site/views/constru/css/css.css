@@ -1,0 +1,8 @@
+.page > header:nth-child(1) {
+	
+	display: none;
+
+}
+footer.section{
+	display: none;
+}

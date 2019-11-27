@@ -11,7 +11,7 @@
 
 define('BASE_URL', 'http://localhost/chile/');
 //define('BASE_URL', 'http://192.168.0.13/chile/');
-define('DEFAULT_CONTROLLER', 'principal');
+define('DEFAULT_CONTROLLER', 'constru');
 define('DEFAULT_LAYOUT', 'basico');
 define('APP_NAME', 'pruba');
 define('APP_SLOGAN', 'default');

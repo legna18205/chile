@@ -1,13 +1,26 @@
+html{
+    position: relative;
+ min-height: 100%; 
+}
+body {
+ margin: 0 0 110px; /* bottom = footer height + margin of the footer */
+}
+
+footer {
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ margin-top:10px;
+ height: 100px;
+ width: 100%;
+}
 
 body {
-	/*background-image: url(../../../public/img/corretaje-de-propiedades.jpg);*/
+	background-image: url(../../../public/img/corretaje-de-propiedades.jpg);
 	min-height: 60vh;
 	background-size: 140%;    
-	/*background-position: center;
-		/*-moz-background-size: 140%; 
-	  	-o-background-size: 140%;  
-	 	-webkit-background-size: 140%; 
-	    -khtml-background-size: 140%; */ 
+	background-position: center;
+	background-size: auto 100%;
 	background-repeat: no-repeat;
 }
 .letras-pag{
