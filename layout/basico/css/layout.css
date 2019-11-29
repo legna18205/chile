@@ -1,3 +1,11 @@
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background: #ffffff8a;
+}
 html{
     position: relative;
  min-height: 100%; 
@@ -18,10 +26,7 @@ footer {
 body {
 	background-image: url(../../../public/img/corretaje-de-propiedades.jpg);
 	min-height: 60vh;
-	background-size: 140%;    
-	background-position: center;
-	background-size: auto 100%;
-	background-repeat: no-repeat;
+	
 }
 .letras-pag{
 font-family: 'Lobster', cursive;

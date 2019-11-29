@@ -1,30 +1,62 @@
-@media only screen and  (min-width: 1201px) {  
+@media only screen and  (min-width: 1401px) {  
 
-
-
-} 
-
-@media only screen and (max-width: 1200px) and (min-width: 992px) {  
-
-
-
-}
-
-@media only screen and (max-width: 991px) and (min-width: 768px) {  
-
-.section-md, .section-lg, .section-xl {
-	padding-left: 10px;
-	padding-right:10px;
+body {
+	background-image: url(../../../public/img/santiago.jpg);
+	min-height: 60vh;
+	    
+	background-position: center;
+	background-size: auto auto;
+	background-repeat: no-repeat;
 }
 
 
 } 
-@media only screen and (max-width: 767px) and (min-width: 576px) {  
+
+@media only screen and (max-width: 1400px) and (min-width: 801px) {  
+
+body {
+	background-image: url(../../../public/img/santiago.jpg);
+	min-height: 100vh;
+	background-position: center;
+	background-size: 150% auto ;
+	background-repeat: no-repeat;
+}
+
+}
+
+@media only screen and (max-width: 800px) and (min-width: 601px) {  
+
+body {
+	background-image: url(../../../public/img/santiago.jpg);
+	min-height: 100vh;
+	background-position: center;
+	background-size: 250% auto ;
+	background-repeat: no-repeat;
+}
+
+
+.section-md, .section-lg, .section-xl {
+	/* padding-left: 10px;
+	padding-right:10px; */
+}
+
+
+} 
+@media only screen and (max-width: 600px) and (min-width: 300px) {  
+
+body {
+	background-image: url(../../../public/img/santiago.jpg);
+	min-height: 100vh;
+	background-position: center;
+	background-size: 500% auto ;
+	background-repeat: no-repeat;
+}
+
 
 .section-md, .section-lg, .section-xl {
 
-	padding-left: 10px;
-	padding-right:10px;
+	/* padding-left: 10px;
+	padding-right:10px; */
 }
 
 
@@ -33,8 +65,8 @@
 @media only screen and (max-width: 575px)  {  
 
 .section-md, .section-lg, .section-xl {
-	padding-left: 20px;
-	padding-right:20px;
+	/* padding-left: 20px;
+	padding-right:20px; */
 }
 
 } 

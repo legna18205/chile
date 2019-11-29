@@ -2,7 +2,7 @@
 	  		<div id="map">div map</div>
 	  </div> -->
 	 <div class="row justify-content-center">
-     <div class="col-sm-3">
+     <div class="col-sm-5 img-logo-principal">
   <img class="img-logo" src="<?php echo BASE_URL ?>public/img/logos/logo.png">
 
 </div>
@@ -30,7 +30,7 @@
           <div class="row justify-content-around row-lg-50 row-35 offset-top-2">
             
             <?php for($i=0; $i < count($this->propiedades) ; $i++):?>
-            <div class="col-xl-3 col-gl-4 col-md-6 col-sm-12 col-12 wow-outer cuadro">
+            <div class="col-xl-2 col-gl-3 col-md-4 col-sm-12 col-12 wow-outer cuadro">
               <!-- Post Modern-->
               <article class="post-modern wow slideInLeft">
                 <?php if($i==0): ?>
@@ -41,18 +41,18 @@
                   <a class="post-modern-media propiedad articulo" href="#" data-id="<?php print_r($this->propiedades[$i]['id_propiedad']); ?>" data-posicion='intermedio'>
                 <?php endif;?>
                 <?php if(isset($this->propiedades[$i]['fotos'][0]['grande'])): ?>
-                  <img src="<?php echo BASE_URL.$this->propiedades[$i]['fotos'][0]['grande'];?>" alt="" >
+                  <img src="<?php echo BASE_URL.$this->propiedades[$i]['fotos'][0]['grande'];?>" alt="" style="width: 80%;margin-left: 10%;" >
                 <?php else: ?>
-                  <img src="<?php echo BASE_URL ?>public/img/casa_out.png" alt="" >
+                  <img src="<?php echo BASE_URL ?>public/img/casa_out.png" alt="" style="width: 80%;margin-left: 10%;">
                 <?php endif;?>
               </a>
                 <h4 class="post-modern-title">
                 <?php if($i==0): ?>
-                  <a class="post-modern-title propiedad" href="#" data-id="<?php print_r($this->propiedades[$i]['id_propiedad']); ?>" data-posicion='ultimo'>                  
+                  <a class="post-modern-title propiedad" href="#" data-id="<?php print_r($this->propiedades[$i]['id_propiedad']); ?>" data-posicion='ultimo' style="text-align: left;margin-left: 14px;font-size: 100%;">                  
                 <?php elseif($i==(count($this->propiedades)-1)): ?>
-                  <a class="post-modern-title propiedad" href="#" data-id="<?php print_r($this->propiedades[$i]['id_propiedad']); ?>" data-posicion='primero'>                  
+                  <a class="post-modern-title propiedad" href="#" data-id="<?php print_r($this->propiedades[$i]['id_propiedad']); ?>" data-posicion='primero' style="text-align: left;margin-left: 14px;font-size: 100%;">                  
                 <?php else: ?>
-                  <a class="post-modern-title propiedad" href="#" data-id="<?php print_r($this->propiedades[$i]['id_propiedad']); ?>" data-posicion='intermedio'>                  
+                  <a class="post-modern-title propiedad" href="#" data-id="<?php print_r($this->propiedades[$i]['id_propiedad']); ?>" data-posicion='intermedio' style="text-align: left;margin-left: 14px;font-size: 100%;">                  
                 <?php endif;?>
                   <?php print_r($this->propiedades[$i]['titulo']); ?>
                 </a></h4>

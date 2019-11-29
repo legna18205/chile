@@ -61,7 +61,7 @@
 
  
       <header>
-            <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+            <nav class="navbar fixed-top navbar-expand-md ">
                  <div class="mx-auto order-0 ">
                     <a class="navbar-brand " href="<?php echo BASE_URL; ?>">
                       <img   src="<?php echo BASE_URL?>public/img/logos/prop2.png" alt="" width="150" height="auto"/>
